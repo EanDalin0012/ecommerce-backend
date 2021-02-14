@@ -1,4 +1,4 @@
-package com.ecommercebackend.core.config.jacksonconfig;
+package com.ecommercebackend.core.config.jacksonConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

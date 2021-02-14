@@ -99,6 +99,7 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
                     userInfo.getString("password"),
                     grantedAuthorities);
 //
+            eventPublisher.publishEvent(new UserAuthenticateEvent(usernamePasswordAuthenticationToken));
             return usernamePasswordAuthenticationToken;
 
         } catch (UsernameNotFoundException ex) {

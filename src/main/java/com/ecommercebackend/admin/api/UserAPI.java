@@ -10,10 +10,12 @@ import com.ecommercebackend.core.exception.ValidatorException;
 import com.ecommercebackend.core.model.map.ModelMap;
 import com.ecommercebackend.core.model.map.MultiModelMap;
 import com.ecommercebackend.core.model.template.ResponseData;
+import com.ecommercebackend.event.UserAuthenticateEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -21,12 +23,16 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.*;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/api/user/v1")
 public class UserAPI {
     private static final Logger log = LoggerFactory.getLogger(UserAPI.class);
+
+    @Inject
+    private ApplicationEventPublisher eventPublisher;
 
     @Autowired
     private UserServiceImplement userService;
@@ -42,7 +48,6 @@ public class UserAPI {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         try {
             log.info("======== Start retrieve list of user ============");
-
             ObjectMapper objectMapper = new ObjectMapper();
             ModelMap input = new ModelMap();
             ModelMap body = new ModelMap();
@@ -195,7 +200,7 @@ public class UserAPI {
         ResponseData<ModelMap> out = new ResponseData<>();
         try {
             log.info("======== Start load user info========");
-
+            eventPublisher.publishEvent(new UserAuthenticateEvent(userName));
             ObjectMapper objectMapper = new ObjectMapper();
             ModelMap input = new ModelMap();
             input.setString("user_name", userName);

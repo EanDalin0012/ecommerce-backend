@@ -3,9 +3,12 @@ package com.ecommercebackend.core.provider;
 import com.ecommercebackend.core.model.map.ModelMap;
 import com.ecommercebackend.core.model.map.MultiModelMap;
 import com.ecommercebackend.core.service.implement.DefaultAuthenticationServiceImplement;
+import com.ecommercebackend.event.UserAuthenticateEvent;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -15,11 +18,16 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class DefaultAuthenticationProvider implements AuthenticationProvider {
     private static final Logger log = LoggerFactory.getLogger(DefaultAuthenticationProvider.class);
+
+    @Inject
+    private ApplicationEventPublisher eventPublisher;
 
     @Autowired
     private DefaultAuthenticationServiceImplement userService;
@@ -30,12 +38,13 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        log.info("\n<<<<<==============Start Authorization ===============>>>>>>>>>>>>\n");
+        log.info("<<<<<==============Start Authorization ===============>>>>>>>>>>>>\n");
         try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            log.info("<<<<<==============Start Authorization"+objectMapper.writeValueAsString(authentication));
             ModelMap input = new ModelMap();
             input.setString("user_name", authentication.getName());
             ModelMap userInfo = userService.getUserByName(input);
-
             if (userInfo == null) {
                 log.info("<<<<<==============Authorization user not found===============>>>>>>>>>>>>");
                 throw new UsernameNotFoundException("User Not found");
@@ -85,10 +94,12 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
 //            userService.updateLoginSuccess(param);
 //            isLoginSuccess(param);
             log.info("\n<<<<<==============End Authorization ===============>>>>>>>>>>>>\n");
-            return new UsernamePasswordAuthenticationToken(
+            UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =  new UsernamePasswordAuthenticationToken(
                     userInfo.getString("username"),
                     userInfo.getString("password"),
                     grantedAuthorities);
+//
+            return usernamePasswordAuthenticationToken;
 
         } catch (UsernameNotFoundException ex) {
             log.info("\n<<<<<============== get error user name not found exception ===============>>>>>>>>>>>>\n" + ex);
@@ -103,4 +114,5 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
     public boolean supports(Class<?> authentication) {
         return authentication.equals(UsernamePasswordAuthenticationToken.class);
     }
+
 }

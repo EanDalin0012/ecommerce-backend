@@ -1,7 +1,6 @@
 package com.ecommercebackend.core.model.template;
 
-
-import com.ecommercebackend.core.model.model.ErrorMessage;
+import com.ecommercebackend.core.dto.ErrorMessage;
 
 public class ResponseData<B> {
 

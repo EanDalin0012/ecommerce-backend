@@ -1,4 +1,4 @@
-package com.ecommercebackend.core.model.model;
+package com.ecommercebackend.core.dto;
 
 public class ErrorMessage {
     private String code;

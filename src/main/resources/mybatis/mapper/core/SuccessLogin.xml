@@ -16,6 +16,7 @@
 			    , orientation
 			    , network_ip
 			    , user_name
+			    , date
 			)
 			VALUES (
                 #{userAgent}
@@ -28,6 +29,7 @@
                 , #{orientation}
                 , #{networkIP}
                 , #{userName}
+                , #{date}
 			)
     	]]>
     </insert>

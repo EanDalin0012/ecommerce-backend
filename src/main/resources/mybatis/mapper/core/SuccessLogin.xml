@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ecommercebackend.core.dao.SuccessLoginDao">
+
+    <insert id="save">
+        <![CDATA[
+	    	INSERT INTO success_login
+			(
+                  user_agent
+			    , os
+			    , browser
+			    , device
+			    , os_version
+			    , browser_version
+			    , device_type
+			    , orientation
+			    , network_ip
+			    , user_name
+			)
+			VALUES (
+                #{userAgent}
+                , #{os}
+                , #{browser}
+                , #{device}
+                , #{osVersion}
+                , #{browserVersion}
+                , #{deviceType}
+                , #{orientation}
+                , #{networkIP}
+                , #{userName}
+			)
+    	]]>
+    </insert>
+</mapper>

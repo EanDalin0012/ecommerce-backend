@@ -1,6 +1,6 @@
-package com.ecommercebackend.event.listener;
+package com.ecommercebackend.core.event.listener;
 
-import com.ecommercebackend.event.NotifyEvent;
+import com.ecommercebackend.core.event.NotifyEvent;
 import org.springframework.context.ApplicationListener;
 
 public class NotifyEventListener implements ApplicationListener<NotifyEvent> {

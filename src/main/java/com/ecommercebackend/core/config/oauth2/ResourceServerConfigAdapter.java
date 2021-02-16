@@ -28,4 +28,6 @@ public class ResourceServerConfigAdapter extends ResourceServerConfigurerAdapter
                 .antMatchers(HttpMethod.POST, SECURED_PATTERN).access(SECURED_WRITE_SCOPE)
                 .anyRequest().access(SECURED_READ_SCOPE);
     }
+
+
 }

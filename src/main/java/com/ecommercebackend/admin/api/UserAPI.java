@@ -10,7 +10,7 @@ import com.ecommercebackend.core.exception.ValidatorException;
 import com.ecommercebackend.core.model.map.ModelMap;
 import com.ecommercebackend.core.model.map.MultiModelMap;
 import com.ecommercebackend.core.model.template.ResponseData;
-import com.ecommercebackend.event.UserAuthenticateEvent;
+import com.ecommercebackend.core.event.UserAuthenticateEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -196,15 +196,23 @@ public class UserAPI {
     }
 
     @GetMapping(value = "/load_user")
-    public ResponseData<ModelMap> getUserByUserName(@RequestParam("userName") String userName, @RequestParam("lang") String lang) {
+    public ResponseData<ModelMap> getUserByUserName(@RequestParam("userName") String userName, @RequestParam("lang") String lang, @RequestParam("deviceInfo") String deviceInfo, @RequestParam("networkIp") String networkIp) {
         ResponseData<ModelMap> out = new ResponseData<>();
         try {
-            log.info("======== Start load user info========");
-            eventPublisher.publishEvent(new UserAuthenticateEvent(userName));
             ObjectMapper objectMapper = new ObjectMapper();
             ModelMap input = new ModelMap();
             input.setString("user_name", userName);
             ModelMap outPut = userService.loadUserByUserName(input);
+
+            if (outPut != null) {
+                ModelMap device = objectMapper.convertValue(deviceInfo, ModelMap.class);
+                ModelMap userAuthenticate = new ModelMap();
+                userAuthenticate.set("networkIP", networkIp);
+                userAuthenticate.setModelMap("device", device);
+                log.info("======== Start load user info========");
+                eventPublisher.publishEvent(new UserAuthenticateEvent(userAuthenticate));
+            }
+
             out.setBody(outPut);
 
             log.info("======== Values : " + objectMapper.writeValueAsString(out));
@@ -223,5 +231,26 @@ public class UserAPI {
             return out;
         }
 
+    }
+
+    @PostMapping(value = "/load/user")
+    public ModelMap loadUser(@RequestBody ModelMap body, @RequestParam ("lang") String lang) throws ValidatorException {
+        ModelMap out = new ModelMap();
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            log.info("load user "+objectMapper.writeValueAsString(body));
+            ModelMap input = new ModelMap();
+            input.setString("user_name", "admin");
+            out = userService.loadUserByUserName(input);
+            if (out != null) {
+                eventPublisher.publishEvent(new UserAuthenticateEvent(body));
+            }
+            return out;
+        } catch (ValidatorException ex) {
+            ex.setLanguage(lang);
+            throw ex;
+        } catch (Exception e) {
+            return out;
+        }
     }
 }

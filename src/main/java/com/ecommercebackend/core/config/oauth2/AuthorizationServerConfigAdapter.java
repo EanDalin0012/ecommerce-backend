@@ -1,10 +1,14 @@
 package com.ecommercebackend.core.config.oauth2;
 
+import com.ecommercebackend.core.event.UserAuthenticateEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,12 +21,16 @@ import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHand
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableAuthorizationServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AuthorizationServerConfigAdapter extends AuthorizationServerConfigurerAdapter {
+
+    @Inject
+    private ApplicationEventPublisher eventPublisher;
 
     @Autowired
     @Qualifier("dataSource")
@@ -62,5 +70,12 @@ public class AuthorizationServerConfigAdapter extends AuthorizationServerConfigu
         endpoints.tokenStore(tokenStore()).authenticationManager(authenticationManager).userDetailsService(userDetailsService);
     }
 
+//    @EventListener
+//    public void authSuccessEventListener(AuthenticationSuccessEvent authorizedEvent){
+//        // write custom code here for login success audit
+//        System.out.println("User Oauth2 login success");
+//        System.out.println("This is success event : "+authorizedEvent.getAuthentication().getPrincipal());
+//        eventPublisher.publishEvent(new UserAuthenticateEvent(authorizedEvent));
+//    }
 
 }

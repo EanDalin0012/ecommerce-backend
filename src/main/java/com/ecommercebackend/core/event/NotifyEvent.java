@@ -1,4 +1,4 @@
-package com.ecommercebackend.event;
+package com.ecommercebackend.core.event;
 
 import org.springframework.context.ApplicationEvent;
 

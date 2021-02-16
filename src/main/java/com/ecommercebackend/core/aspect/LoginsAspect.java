@@ -1,15 +1,5 @@
 package com.ecommercebackend.core.aspect;
 
-import com.ecommercebackend.event.NotifyEvent;
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.stereotype.Component;
-import javax.inject.Inject;
-
 //@Aspect
 //@Component
 public class LoginsAspect {

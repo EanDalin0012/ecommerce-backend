@@ -3,7 +3,6 @@ package com.ecommercebackend.core.provider;
 import com.ecommercebackend.core.model.map.ModelMap;
 import com.ecommercebackend.core.model.map.MultiModelMap;
 import com.ecommercebackend.core.service.implement.DefaultAuthenticationServiceImplement;
-import com.ecommercebackend.event.UserAuthenticateEvent;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +20,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class DefaultAuthenticationProvider implements AuthenticationProvider {
     private static final Logger log = LoggerFactory.getLogger(DefaultAuthenticationProvider.class);
-
-    @Inject
-    private ApplicationEventPublisher eventPublisher;
 
     @Autowired
     private DefaultAuthenticationServiceImplement userService;
@@ -99,7 +94,7 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
                     userInfo.getString("password"),
                     grantedAuthorities);
 //
-            eventPublisher.publishEvent(new UserAuthenticateEvent(usernamePasswordAuthenticationToken));
+
             return usernamePasswordAuthenticationToken;
 
         } catch (UsernameNotFoundException ex) {

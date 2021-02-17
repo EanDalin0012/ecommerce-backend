@@ -33,10 +33,8 @@ public class CategoryAPI {
     @GetMapping(value = "/list")
     public ResponseData<MultiModelMap> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
         ResponseData<MultiModelMap> response = new ResponseData<>();
-
         try {
-            log.info("===== Start retrive list of category=====");
-
+            log.info("===== Start retrieve list of category=====");
             ModelMap input = new ModelMap();
             input.setString("status", Status.Delete.getValueStr());
             MultiModelMap out = categoryService.retrieveList(input);

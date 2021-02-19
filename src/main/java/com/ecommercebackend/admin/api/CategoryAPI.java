@@ -39,7 +39,6 @@ public class CategoryAPI {
             input.setString("status", Status.Delete.getValueStr());
             MultiModelMap out = categoryService.retrieveList(input);
             response.setBody(out);
-
             ObjectMapper mapper = new ObjectMapper();
             log.info("===== Result : " + mapper.writeValueAsString(response));
             log.info("===== End get list of category=====");

@@ -5,8 +5,7 @@ import com.ecommercebackend.core.constant.ErrorCode;
 import com.ecommercebackend.core.dto.ErrorMessage;
 
 public class MessageUtil {
-    public static ErrorMessage message(String key, String lang) {
-        ErrorMessage data = new ErrorMessage();
+    public static String message(String key, String lang) {
         String message = Translator.translate(lang, key);
         if (ErrorCode.EXCEPTION_ERR == key) {
             message = Translator.translate(lang, key);
@@ -15,8 +14,7 @@ public class MessageUtil {
         } else if ("user_id".equals(key)) {
             message = Translator.translate(lang, "user_id");
         }
-        data.setCode(key);
-        data.setMessage(message);
-        return data;
+
+        return message;
     }
 }

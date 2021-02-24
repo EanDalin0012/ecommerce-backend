@@ -33,6 +33,7 @@ public class CategoryAPI {
     @GetMapping(value = "/list")
     public ResponseData<MultiModelMap> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
         ResponseData<MultiModelMap> response = new ResponseData<>();
+        ErrorMessage message = new ErrorMessage();
         try {
             log.info("===== Start retrieve list of category=====");
             ModelMap input = new ModelMap();
@@ -46,13 +47,13 @@ public class CategoryAPI {
         } catch (ValidatorException ev) {
             log.error("========= error ValueException api category get list", ev);
             ev.printStackTrace();
-            ErrorMessage message = MessageUtil.message("category_" + ev.getKey(), lang);
+            message.setMessage( MessageUtil.message("category_" + ev.getKey(), lang));
             response.setError(message);
             return response;
         } catch (Exception e) {
             e.printStackTrace();
             log.error("============ error Exception api category get list", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             response.setError(message);
             return response;
         }
@@ -61,7 +62,7 @@ public class CategoryAPI {
     @PostMapping(value = "/save")
     public ResponseData<ModelMap> save(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
-
+        ErrorMessage message = new ErrorMessage();
         try {
             log.info("===== Start save category =====");
 
@@ -90,7 +91,7 @@ public class CategoryAPI {
         catch (Exception | ValidatorException e) {
             e.printStackTrace();
             log.error("========= error Exception api save category", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;
         }
@@ -100,7 +101,7 @@ public class CategoryAPI {
     @PostMapping(value = "/update")
     public ResponseData<ModelMap> update(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
         ResponseData<ModelMap> responseData = new ResponseData<>();
-
+        ErrorMessage message = new ErrorMessage();
         try {
             log.info("========= Start Update category update data ======");
 
@@ -129,13 +130,13 @@ public class CategoryAPI {
         } catch (ValidatorException ev) {
             ev.printStackTrace();
             log.error("======= error:", ev);
-            ErrorMessage message = MessageUtil.message("category_" + ev.getKey(), lang);
+            message.setMessage(MessageUtil.message("category_" + ev.getKey(), lang));
             responseData.setError(message);
             return responseData;
         } catch (Exception e) {
             e.printStackTrace();
             log.error("======== error: ", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;
         }
@@ -146,6 +147,7 @@ public class CategoryAPI {
     public ResponseData<ModelMap> delete(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         TransactionStatus transactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());
+        ErrorMessage message = new ErrorMessage();
         try {
             log.info("============ Start delete api category delete =============");
 
@@ -176,14 +178,14 @@ public class CategoryAPI {
         } catch (ValidatorException ev) {
             ev.printStackTrace();
             log.error("error Application Exception api save category", ev);
-            ErrorMessage message = MessageUtil.message("category_" + ev.getKey(), lang);
+            message.setMessage(MessageUtil.message("category_" + ev.getKey(), lang));
             responseData.setError(message);
             return responseData;
         } catch (Exception e) {
             transactionManager.rollback(transactionStatus);
             e.printStackTrace();
             log.error("get error exception delete api category", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;
         }

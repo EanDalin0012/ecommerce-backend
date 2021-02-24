@@ -46,6 +46,7 @@ public class UserAPI {
     @GetMapping(value = "/get/list")
     public ResponseData<ModelMap> getUserList(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
+        ErrorMessage message = new ErrorMessage();
         try {
             log.info("======== Start retrieve list of user ============");
             ObjectMapper objectMapper = new ObjectMapper();
@@ -64,13 +65,13 @@ public class UserAPI {
             return responseData;
         } catch (ValidatorException ex) {
             log.error("=========== get error:", ex);
-            ErrorMessage message = MessageUtil.message("user_" + ex.getKey(), lang);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
             responseData.setError(message);
             return responseData;
 
         } catch (Exception e) {
             log.error("========== error execption", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;
         }
@@ -85,6 +86,7 @@ public class UserAPI {
     @GetMapping(value = "/oauth/revoke-token")
     public ResponseData<ModelMap> oauthRevokeToken(HttpServletRequest request) {
         ResponseData responseData = new ResponseData();
+        ErrorMessage message = new ErrorMessage();
         ModelMap output = new ModelMap();
         try {
             log.info("========== Start revoke toke===========");
@@ -109,7 +111,7 @@ public class UserAPI {
             return responseData;
         } catch (Exception e) {
             log.error("======== get error revoke toke exception ", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, "en");
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, "en"));
             responseData.setError(message);
             return responseData;
         }
@@ -130,7 +132,7 @@ public class UserAPI {
         ResponseData<ModelMap> response = new ResponseData<>();
         ModelMap body = param.getModelMap("body");
         TransactionStatus transactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());
-
+        ErrorMessage message = new ErrorMessage();
         try {
             log.info("======== Start User " + function + "=============");
 
@@ -183,13 +185,13 @@ public class UserAPI {
             return response;
         } catch (ValidatorException ex) {
             log.error("========== get error:", ex);
-            ErrorMessage message = MessageUtil.message("user_" + ex.getKey(), lang);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
             response.setError(message);
             return response;
         } catch (Exception e) {
             log.error("======== get error exception", e);
             transactionManager.rollback(transactionStatus);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             response.setError(message);
             return response;
         }
@@ -198,6 +200,7 @@ public class UserAPI {
     @GetMapping(value = "/load_user")
     public ResponseData<ModelMap> getUserByUserName(@RequestParam("userName") String userName, @RequestParam("lang") String lang, @RequestParam("deviceInfo") String deviceInfo, @RequestParam("networkIp") String networkIp) {
         ResponseData<ModelMap> out = new ResponseData<>();
+        ErrorMessage message = new ErrorMessage();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             ModelMap input = new ModelMap();
@@ -221,12 +224,12 @@ public class UserAPI {
             return out;
         } catch (ValidatorException ex) {
             log.error("======== error:", ex);
-            ErrorMessage message = MessageUtil.message("user_" + ex.getKey(), lang);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
             out.setError(message);
             return out;
         } catch (Exception e) {
             log.error("======== error execption:", e);
-            ErrorMessage message = MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             out.setError(message);
             return out;
         }

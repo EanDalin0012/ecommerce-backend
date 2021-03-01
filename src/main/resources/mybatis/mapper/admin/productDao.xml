@@ -12,12 +12,12 @@
 			, p.create_date                     as "createDate"
 			, p.modify_date                     as "modifyDate"
 			, p.status
-			, p.resource_img_id                 as "categoryId"
+			, p.resource_img_id                 as "resourceImgId"
 			, p.category_id                     as "categoryId"
 			, p.web_show                        as "webShow"
 			, p.mobile_show                     as "mobileShow"
 			, pdf.product_detials_id 			as "productDetialsId"
-			, c."name"			                as "catgoryName"
+			, c."name"			                as "categoryName"
 			, (SELECT u.user_name FROM user_ u WHERE u.id = p.create_by) as "createBy"
 		  , (SELECT u.user_name FROM user_ u WHERE u.id = p.modify_by) as "modifyBy"
 		FROM product p

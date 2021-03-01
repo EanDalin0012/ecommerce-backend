@@ -30,7 +30,12 @@ public class CustomResponseBodyAdviceAdapter implements ResponseBodyAdvice<Objec
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         HttpServletResponse servletResponse = ((ServletServerHttpResponse) response).getServletResponse();
-        if(servletResponse.getStatus() == 200) {
+        String url = request.getURI().toString();
+        String arr[] = url.split("/");
+        String mUrl = arr[4];
+        if(mUrl.equals("web")) {
+            return body;
+        } else if(servletResponse.getStatus() == 200) {
             return  customizeBeforeBodyWrite(body);
         } else {
             return body;

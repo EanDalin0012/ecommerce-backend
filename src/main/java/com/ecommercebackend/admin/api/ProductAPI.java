@@ -210,7 +210,7 @@ public class ProductAPI {
             ModelMap output = new ModelMap();
             output.setString("status", StatusYN.N);
 
-            input.setInt("id", data.getInt("product_id"));
+            input.setInt("id", data.getInt("productId"));
             input.setString("status", Status.Modify.getValueStr());
             input.setInt("user_id", user_id);
 

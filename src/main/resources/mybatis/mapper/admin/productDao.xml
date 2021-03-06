@@ -44,11 +44,11 @@
 			VALUES (
 			  #{id}
 			, #{name}
-			, #{category_id}
-			, COALESCE(#{resource_img_id}, '' )
+			, #{categoryId}
+			, COALESCE(#{resourceImageId}, '' )
 			, COALESCE(#{description}, '' )
 			, to_char(NOW(), 'YYYYMMDD')
-			, #{user_id}
+			, #{userId}
 			, #{status}
 			)
     	]]>
@@ -67,11 +67,11 @@
             UPDATE product
             SET
                   name 			    = #{name}
-                , category_id  		= #{category_id}
-                , resource_img_id  	= #{resource_img_id}
+                , category_id  		= #{categoryId}
+                , resource_img_id  	= #{resourceImageId}
                 , description 	    = COALESCE(#{description},'')
                 , status		    = #{status}
-                , modify_by		    = #{user_id}
+                , modify_by		    = #{userId}
                 , modify_date	    = to_char(NOW(), 'YYYYMMDD')
             WHERE id 			    = #{id}
 		]]>
@@ -82,7 +82,7 @@
 		update product
         set
              status  		= #{status}
-            , modify_by   	= #{user_id}
+            , modify_by   	= #{userId}
             , modify_date	= to_char(NOW(), 'YYYYMMDD')
         where id   			= #{id}
 		]]>
@@ -92,9 +92,9 @@
         <![CDATA[
 		update product
         set
-            web_show        = #{web_show}
+            web_show        = #{webShow}
             , status  		= #{status}
-            , modify_by   	= #{user_id}
+            , modify_by   	= #{userId}
             , modify_date	= to_char(NOW(), 'YYYYMMDD')
         where id   			= #{id}
 		]]>
@@ -104,9 +104,9 @@
         <![CDATA[
 		update product
         set
-            mobile_show     = #{mobile_show}
+            mobile_show     = #{mobileShow}
             , status  		= #{status}
-            , modify_by   	= #{user_id}
+            , modify_by   	= #{userId}
             , modify_date	= to_char(NOW(), 'YYYYMMDD')
         where id   			= #{id}
 		]]>

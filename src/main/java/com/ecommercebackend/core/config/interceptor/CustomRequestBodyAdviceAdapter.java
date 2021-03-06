@@ -47,35 +47,24 @@ public class CustomRequestBodyAdviceAdapter extends RequestBodyAdviceAdapter {
 
     private ModelMap customizeAfterBodyRead(Object body) {
         log.info("=== Start Request Body Advice Adapter ===");
-
         ModelMap mMap = new ModelMap();
         ObjectMapper objectMapper = new ObjectMapper();
-
         try {
-
             String clientData = objectMapper.writeValueAsString(body);
-            log.info("Request Body Advice Adapter Data Client = " + clientData);
-
             JSONObject jsonObject = objectMapper.readValue(clientData, JSONObject.class);
-            log.info("Request Body Advice Adapter Data JSONObject Data Convert = " + objectMapper.writeValueAsString(jsonObject));
-
             String encodeKey = EASEncrypter.encodeKey(KeyCode.keyCode);
             String rawData = (String) jsonObject.get("body");
             log.info("Request Body Advice Adapter Client Encrypt Data = " + rawData);
-
             String decrypt = EASEncrypter.decrypt(rawData, encodeKey);
             log.info("Request Body Advice Adapter Client Decrypt Data = " + decrypt);
-
              mMap = objectMapper.readValue(decrypt, ModelMap.class);
-//            mMap.setMMap("body", dataBody);
-            log.info("mMap data return to controller= " + objectMapper.writeValueAsString(mMap));
-
             log.info("=== End Request Body Advice Adapter ===");
             return  mMap;
+
         } catch (Exception e) {
+            log.error("CustomRequestBodyAdviceAdapter get error:", e);
             e.printStackTrace();
         }
-
         return mMap;
     }
 

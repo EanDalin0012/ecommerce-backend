@@ -23,31 +23,31 @@ public class ProductServiceImplement implements ProductService {
 
     @Override
     public int save(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "name", "status", "user_id", "category_id");
+        ValidatorUtil.validate(param, "id", "name", "status", "userId", "categoryId");
         return productDao.save(param);
     }
 
     @Override
     public int delete(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "status", "user_id");
+        ValidatorUtil.validate(param, "id", "status", "userId");
         return productDao.delete(param);
     }
 
     @Override
     public int update(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "name", "status", "user_id");
+        ValidatorUtil.validate(param, "id", "name", "status", "userId");
         return productDao.update(param);
     }
 
     @Override
     public int updateShowOnWeb(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "web_show", "status", "user_id");
+        ValidatorUtil.validate(param, "id", "webShow", "status", "userId");
         return productDao.updateShowOnWeb(param);
     }
 
     @Override
     public int updateShowOnMobile(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "mobile_show", "status", "user_id");
+        ValidatorUtil.validate(param, "id", "mobileShow", "status", "userId");
         return productDao.updateShowOnMobile(param);
     }
 

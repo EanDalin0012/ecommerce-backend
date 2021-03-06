@@ -48,24 +48,19 @@ public class CustomResponseBodyAdviceAdapter implements ResponseBodyAdvice<Objec
         JSONObject jsonObject = new JSONObject();
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-
             String restData = objectMapper.writeValueAsString(body);
-
-            log.info("Rest Data = " + restData);
+            log.info("Rest Data To Client Side (JSON) = " + restData);
             JSONObject jsonNode = objectMapper.readValue(restData, JSONObject.class);
-
             String key = KeyCode.keyCode;
             String encodeKey = EASEncrypter.encodeKey(key);
             String rawData = objectMapper.writeValueAsString(jsonNode);
-
             String bodyData = EASEncrypter.encrypt(rawData, encodeKey);
             jsonObject.put("body", bodyData);
-
-            log.info("Out put data = " + objectMapper.writeValueAsString(jsonObject));
-
+            log.info("Rest Data To Client Side (String[encryption]) = " + objectMapper.writeValueAsString(jsonObject));
             log.info("End Response Body Advice");
             return objectMapper.writeValueAsString(jsonObject);
         }catch (Exception e) {
+            log.error("CustomResponseBodyAdviceAdapter get error:", e);
             e.printStackTrace();
         }
         return null;

@@ -40,33 +40,38 @@ public class ProductAPI {
     }
 
     @PostMapping(value = "/save")
-    public ResponseData<ModelMap> save(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return execute("save", user_id, lang, param);
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> save(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return CompletableFuture.completedFuture(execute("save", user_id, lang, param));
     }
 
     @PostMapping(value = "/update")
-    public ResponseData<ModelMap> update(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return execute("update", user_id, lang, param);
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> update(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return CompletableFuture.completedFuture(execute("update", user_id, lang, param));
     }
 
     @PostMapping(value = "/delete")
-    public ResponseData<ModelMap> delete(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return delete(user_id, lang, param);
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> delete(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return CompletableFuture.completedFuture(updateStatusToDelete(user_id, lang, param.getMultiModelMap("body")));
     }
 
     @PostMapping(value = "/switch_web")
-    public ResponseData<ModelMap> updateShowOnWeb(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return swichOn("web", param, user_id, lang);
+    public CompletableFuture<ResponseData<ModelMap>> updateShowOnWeb(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return CompletableFuture.completedFuture(swichOn("web", param, user_id, lang));
     }
 
     @PostMapping(value = "/switch_mobile")
-    public ResponseData<ModelMap> updateShowOnMobile(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return swichOn("mobile", param, user_id, lang);
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> updateShowOnMobile(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return CompletableFuture.completedFuture(swichOn("mobile", param, user_id, lang));
     }
 
     private ResponseData<ModelMap> execute(String function, int user_id, String lang, ModelMap param) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
         try {
             log.info("====== Start Product " + function + "===========");
 
@@ -75,12 +80,12 @@ public class ProductAPI {
             ModelMap out = new ModelMap();
             out.setString(StatusYN.STATUS, StatusYN.N);
 
-            input.setInt("user_id", user_id);
+            input.setInt("userId", user_id);
             input.setString("name", param.getString("name"));
             input.setString("description", param.getString("description"));
             input.setString("status", Status.Active.getValueStr());
-            input.setInt("category_id", param.getInt("category_id"));
-            input.setString("resource_img_id", param.getString("resource_img_id"));
+            input.setInt("categoryId", param.getInt("categoryId"));
+            input.setString("resourceImageId", param.getString("resourceImageId"));
 
 
             if (function == "save") {
@@ -96,9 +101,7 @@ public class ProductAPI {
 
             } else if (function == "update") {
                 input.setInt("id", param.getInt("id"));
-
                 log.info("========== product values:" + objectMapper.writeValueAsString(input));
-
                 int update = productService.update(input);
                 if (update > 0) {
                     out.setString(StatusYN.STATUS, StatusYN.Y);
@@ -118,6 +121,7 @@ public class ProductAPI {
             return responseData;
         } catch (Exception e) {
             log.error("get error api product save exception", e);
+            e.printStackTrace();
             message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;
@@ -125,7 +129,7 @@ public class ProductAPI {
 
     }
 
-    private ResponseData<ModelMap> delete(int user_id, String lang, MultiModelMap param) {
+    private ResponseData<ModelMap> updateStatusToDelete(int userId, String lang, MultiModelMap param) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         TransactionStatus transactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());
         ErrorMessage message = new ErrorMessage();
@@ -142,7 +146,7 @@ public class ProductAPI {
                 ModelMap input = new ModelMap();
                 for (ModelMap data : param.toListData()) {
                     input.setInt("id", data.getInt("id"));
-                    input.setInt("user_id", user_id);
+                    input.setInt("userId", userId);
                     input.setString("status", Status.Delete.getValueStr());
                     productService.delete(input);
                 }
@@ -199,9 +203,10 @@ public class ProductAPI {
     }
 
 
-    public ResponseData<ModelMap> swichOn(String note, ModelMap data, int user_id, String lang) {
+    public ResponseData<ModelMap> swichOn(String note, ModelMap data, int userId, String lang) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
         try {
             log.info("======= Start Swich ON =======");
 
@@ -212,19 +217,18 @@ public class ProductAPI {
 
             input.setInt("id", data.getInt("productId"));
             input.setString("status", Status.Modify.getValueStr());
-            input.setInt("user_id", user_id);
-
+            input.setInt("userId", userId);
 
             log.info("========= Values :", objectMapper.writeValueAsString(input));
 
             if (note == "web") {
-                input.setBoolean("web_show", data.getBoolean("value"));
+                input.setBoolean("webShow", data.getBoolean("value"));
                 int u = productService.updateShowOnWeb(input);
                 if (u > 0) {
                     output.setString(StatusYN.STATUS, StatusYN.Y);
                 }
             } else if (note == "mobile") {
-                input.setBoolean("mobile_show", data.getBoolean("value"));
+                input.setBoolean("mobileShow", data.getBoolean("value"));
                 int u = productService.updateShowOnMobile(input);
                 if (u > 0) {
                     output.setString(StatusYN.STATUS, StatusYN.Y);

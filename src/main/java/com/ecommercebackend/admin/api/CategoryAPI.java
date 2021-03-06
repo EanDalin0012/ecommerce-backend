@@ -14,10 +14,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping(value = "/api/category/v1")
@@ -31,7 +34,30 @@ public class CategoryAPI {
     private PlatformTransactionManager transactionManager;
 
     @GetMapping(value = "/list")
-    public ResponseData<MultiModelMap> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<MultiModelMap>> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+       return CompletableFuture.completedFuture(getCategories(lang));
+    }
+
+    @PostMapping(value = "/save")
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> save(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return CompletableFuture.completedFuture(execute("save", userId, lang, param));
+    }
+
+    @PostMapping(value = "/update")
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> update(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
+        return CompletableFuture.completedFuture(execute("update", userId, lang, param));
+    }
+
+    @PostMapping(value = "/delete")
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> delete(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
+        return CompletableFuture.completedFuture(updateStatusToDelete(userId, lang, param.getMultiModelMap("body")));
+    }
+
+    private ResponseData<MultiModelMap> getCategories(String lang) {
         ResponseData<MultiModelMap> response = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
         try {
@@ -59,8 +85,7 @@ public class CategoryAPI {
         }
     }
 
-    @PostMapping(value = "/save")
-    public ResponseData<ModelMap> save(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+    private ResponseData<ModelMap> execute(String function, int user_id, String lang, ModelMap param) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
         try {
@@ -69,9 +94,9 @@ public class CategoryAPI {
             ObjectMapper mapper = new ObjectMapper();
             ModelMap body = param.getModelMap("body");
             ModelMap responseBody = new ModelMap();
-            int sequence = categoryService.sequence();
+
             ModelMap input = new ModelMap();
-            input.setInt("id", sequence);
+
             input.setInt("user_id", user_id);
             input.setString("name", body.getString("name"));
             input.setString("description", body.getString("description"));
@@ -79,9 +104,19 @@ public class CategoryAPI {
 
             log.info("===== value : " + mapper.writeValueAsString(input));
 
-            int save = categoryService.save(input);
-            if (save > 0) {
-                responseBody.setString("status", "Y");
+            if (function == "save") {
+                int sequence = categoryService.sequence();
+                input.setInt("id", sequence);
+                int save = categoryService.save(input);
+                if (save > 0) {
+                    responseBody.setString("status", "Y");
+                }
+            } else if (function == "update") {
+                input.setInt("id", param.getInt("id"));
+                int update = categoryService.update(input);
+                if (update > 0) {
+                    responseBody.setString(StatusYN.STATUS, StatusYN.Y);
+                }
             }
             responseData.setBody(responseBody);
 
@@ -98,53 +133,7 @@ public class CategoryAPI {
         return responseData;
     }
 
-    @PostMapping(value = "/update")
-    public ResponseData<ModelMap> update(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
-        ResponseData<ModelMap> responseData = new ResponseData<>();
-        ErrorMessage message = new ErrorMessage();
-        try {
-            log.info("========= Start Update category update data ======");
-
-            ObjectMapper objectMappter = new ObjectMapper();
-            ModelMap out = new ModelMap();
-            ModelMap body = param.getModelMap("body");
-            ModelMap input = new ModelMap();
-            input.setInt("user_id", user_id);
-            input.setInt("id", body.getInt("id"));
-            input.setString("name", body.getString("name"));
-            input.setString("description", body.getString("description"));
-            input.setString("status", Status.Modify.getValueStr());
-
-            log.info("====== Value : " + objectMappter.writeValueAsString(input));
-
-            int update = categoryService.update(input);
-            if (update > 0) {
-                out.setString(StatusYN.STATUS, StatusYN.Y);
-            }
-
-            responseData.setBody(out);
-
-            log.info("====== Response data: " + responseData);
-            log.info("====== End Update category update data ======");
-
-        } catch (ValidatorException ev) {
-            ev.printStackTrace();
-            log.error("======= error:", ev);
-            message.setMessage(MessageUtil.message("category_" + ev.getKey(), lang));
-            responseData.setError(message);
-            return responseData;
-        } catch (Exception e) {
-            e.printStackTrace();
-            log.error("======== error: ", e);
-            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
-            responseData.setError(message);
-            return responseData;
-        }
-        return responseData;
-    }
-
-    @PostMapping(value = "/delete")
-    public ResponseData<ModelMap> delete(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
+    private ResponseData<ModelMap> updateStatusToDelete(int userId, String lang, MultiModelMap param) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         TransactionStatus transactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());
         ErrorMessage message = new ErrorMessage();
@@ -154,25 +143,22 @@ public class CategoryAPI {
             ObjectMapper objectMapper = new ObjectMapper();
             ModelMap out = new ModelMap();
             out.setString(StatusYN.STATUS, StatusYN.N);
-            MultiModelMap body = param.getMultiModelMap("body");
 
-            log.info("======= delete values: " + objectMapper.writeValueAsString(body));
+            log.info("======= delete values: " + objectMapper.writeValueAsString(param));
 
-            if (body.size() > 0) {
+            if (param.size() > 0) {
                 ModelMap input = new ModelMap();
-                for (ModelMap data : body.toListData()) {
+                for (ModelMap data : param.toListData()) {
                     input.setInt("id", data.getInt("id"));
-                    input.setInt("user_id", user_id);
-                    input.setString("status", Status.Delete.getValueStr());
+                    input.setInt("userId", userId);
+                    input.setString(StatusYN.STATUS, Status.Delete.getValueStr());
                     categoryService.delete(input);
                 }
 
                 transactionManager.commit(transactionStatus);
                 out.setString(StatusYN.STATUS, StatusYN.Y);
                 responseData.setBody(out);
-                log.info("============ Response Date: " + objectMapper.writeValueAsString(responseData));
                 log.info("============ End delete api category delete =============");
-
             }
 
         } catch (ValidatorException ev) {
@@ -191,5 +177,4 @@ public class CategoryAPI {
         }
         return responseData;
     }
-
 }

@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping(value = "/api/user/v1")
@@ -44,7 +46,68 @@ public class UserAPI {
 
 
     @GetMapping(value = "/get/list")
-    public ResponseData<ModelMap> getUserList(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> getUserList(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+        return  CompletableFuture.completedFuture(this.userList(lang));
+    }
+
+    @PostMapping(value = "/save")
+    public ResponseData<ModelMap> save(@RequestBody ModelMap param, @RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+        return execute(param, "save", lang, user_id);
+    }
+
+    @GetMapping(value = "/oauth/revoke-token")
+    @Async("asyncExecutor")
+    public CompletableFuture<ResponseData<ModelMap>> oauthRevokeToken(HttpServletRequest request) {
+        return CompletableFuture.completedFuture(this.revokeToken(request));
+    }
+
+    @GetMapping(value = "/load_user")
+    public ResponseData<ModelMap> getUserByUserName(@RequestParam("userName") String userName, @RequestParam("lang") String lang, @RequestParam("deviceInfo") String deviceInfo, @RequestParam("networkIp") String networkIp) {
+        ResponseData<ModelMap> out = new ResponseData<>();
+        ErrorMessage message = new ErrorMessage();
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            ModelMap input = new ModelMap();
+            input.setString("user_name", userName);
+            ModelMap outPut = userService.loadUserByUserName(input);
+
+            if (outPut != null) {
+                ModelMap device = objectMapper.convertValue(deviceInfo, ModelMap.class);
+                ModelMap userAuthenticate = new ModelMap();
+                userAuthenticate.set("networkIP", networkIp);
+                userAuthenticate.setModelMap("device", device);
+                log.info("======== Start load user info========");
+                eventPublisher.publishEvent(new UserAuthenticateEvent(userAuthenticate));
+            }
+
+            out.setBody(outPut);
+
+            log.info("======== Values : " + objectMapper.writeValueAsString(out));
+            log.info("======== End load user info========");
+
+            return out;
+        } catch (ValidatorException ex) {
+            log.error("======== error:", ex);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
+            out.setError(message);
+            return out;
+        } catch (Exception e) {
+            log.error("======== error execption:", e);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
+            out.setError(message);
+            return out;
+        }
+
+    }
+
+    @PostMapping(value = "/load/user")
+    @Async("asyncExecutor")
+    public  CompletableFuture<ModelMap> loadUser(@RequestBody ModelMap body, @RequestParam ("lang") String lang) throws ValidatorException {
+        return CompletableFuture.completedFuture(this.loadUserByUserName(body, lang));
+    }
+
+    private ResponseData<ModelMap> userList(String lang) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
         try {
@@ -75,16 +138,9 @@ public class UserAPI {
             responseData.setError(message);
             return responseData;
         }
-
     }
 
-    @PostMapping(value = "/save")
-    public ResponseData<ModelMap> save(@RequestBody ModelMap param, @RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
-        return execute(param, "save", lang, user_id);
-    }
-
-    @GetMapping(value = "/oauth/revoke-token")
-    public ResponseData<ModelMap> oauthRevokeToken(HttpServletRequest request) {
+    private ResponseData<ModelMap> revokeToken (HttpServletRequest request) {
         ResponseData responseData = new ResponseData();
         ErrorMessage message = new ErrorMessage();
         ModelMap output = new ModelMap();
@@ -115,8 +171,8 @@ public class UserAPI {
             responseData.setError(message);
             return responseData;
         }
-
     }
+
 
     /**
      * <pre>
@@ -197,47 +253,7 @@ public class UserAPI {
         }
     }
 
-    @GetMapping(value = "/load_user")
-    public ResponseData<ModelMap> getUserByUserName(@RequestParam("userName") String userName, @RequestParam("lang") String lang, @RequestParam("deviceInfo") String deviceInfo, @RequestParam("networkIp") String networkIp) {
-        ResponseData<ModelMap> out = new ResponseData<>();
-        ErrorMessage message = new ErrorMessage();
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            ModelMap input = new ModelMap();
-            input.setString("user_name", userName);
-            ModelMap outPut = userService.loadUserByUserName(input);
-
-            if (outPut != null) {
-                ModelMap device = objectMapper.convertValue(deviceInfo, ModelMap.class);
-                ModelMap userAuthenticate = new ModelMap();
-                userAuthenticate.set("networkIP", networkIp);
-                userAuthenticate.setModelMap("device", device);
-                log.info("======== Start load user info========");
-                eventPublisher.publishEvent(new UserAuthenticateEvent(userAuthenticate));
-            }
-
-            out.setBody(outPut);
-
-            log.info("======== Values : " + objectMapper.writeValueAsString(out));
-            log.info("======== End load user info========");
-
-            return out;
-        } catch (ValidatorException ex) {
-            log.error("======== error:", ex);
-            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
-            out.setError(message);
-            return out;
-        } catch (Exception e) {
-            log.error("======== error execption:", e);
-            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
-            out.setError(message);
-            return out;
-        }
-
-    }
-
-    @PostMapping(value = "/load/user")
-    public ModelMap loadUser(@RequestBody ModelMap body, @RequestParam ("lang") String lang) throws ValidatorException {
+    private ModelMap loadUserByUserName (ModelMap body, String lang) throws ValidatorException {
         ModelMap out = new ModelMap();
         try {
             ObjectMapper objectMapper = new ObjectMapper();

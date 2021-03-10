@@ -10,7 +10,9 @@ import com.ecommercebackend.core.model.map.MultiModelMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CategoryServiceImplement implements CategoryService {
@@ -20,6 +22,8 @@ public class CategoryServiceImplement implements CategoryService {
 
 
     @Override
+    @Transactional(readOnly = true)
+    @PreAuthorize("hasAuthority('COMPANY_READ')")
     public MultiModelMap retrieveList(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "status");
         return categoryDao.retrieveList(param);

@@ -15,8 +15,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,9 +36,8 @@ public class CategoryAPI {
     private PlatformTransactionManager transactionManager;
 
     @GetMapping(value = "/list")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<MultiModelMap>> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
-       return CompletableFuture.completedFuture(getCategories(lang));
+    public ResponseData<MultiModelMap> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+       return getCategories(lang);
     }
 
     @PostMapping(value = "/save")

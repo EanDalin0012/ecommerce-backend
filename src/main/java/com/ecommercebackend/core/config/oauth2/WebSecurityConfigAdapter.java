@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -23,6 +24,8 @@ public class WebSecurityConfigAdapter extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DefaultAuthenticationServiceImplement appUserRepository;
+    @Autowired
+    private PasswordEncoder userPasswordEncoder;
 
     @Autowired
     public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,6 +36,11 @@ public class WebSecurityConfigAdapter extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(appUserRepository).passwordEncoder(userPasswordEncoder);
     }
 
     @Override

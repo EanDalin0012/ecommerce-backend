@@ -4,7 +4,7 @@
 
     <resultMap type="ModelMap" id="user">
         <id property="id" column="id"/>
-        <result property="username" column="user_name"/>
+        <result property="userName" column="user_name"/>
         <result property="password" column="password"/>
         <result property="accountExpired" column="account_expired"/>
         <result property="accountLocked" column="account_locked"/>
@@ -14,6 +14,22 @@
     </resultMap>
 
     <resultMap type="ModelMap" id="authority">
+        <id property="id" column="authority_id"/>
+        <result property="name" column="authority_name"/>
+    </resultMap>
+
+    <resultMap type="com.ecommercebackend.core.model.security.User" id="user1">
+        <id property="id" column="id"/>
+        <result property="username" column="user_name"/>
+        <result property="password" column="password"/>
+        <result property="accountExpired" column="account_expired"/>
+        <result property="accountLocked" column="account_locked"/>
+        <result property="credentialsExpired" column="credentials_expired"/>
+        <result property="enabled" column="enabled"/>
+        <association property="authorities" resultMap="authority1" javaType="list"/>
+    </resultMap>
+
+    <resultMap type="com.ecommercebackend.core.model.security.Authority" id="authority1">
         <id property="id" column="authority_id"/>
         <result property="name" column="authority_name"/>
     </resultMap>
@@ -35,6 +51,26 @@
 			inner join authority a on a.id = ua.authority_id
 			where u.user_name = #{user_name}
 	   ]]>
+    </select>
+
+
+    <select id="getUserByName1" resultMap="user1">
+        <![CDATA[
+        select
+            u.id
+             , u.user_name
+             , u."password"
+             , u.account_expired
+             , u.account_locked
+             , u.credentials_expired
+             , u.enabled
+             , a."name"		as "authority_name"
+             , a.id 			as "authority_id"
+        from user_ u
+                 inner join users_authorities ua on ua.user_id = u.id
+                 inner join authority a on a.id = ua.authority_id
+        where u.user_name = #{user_name}
+        ]]>
     </select>
 
 

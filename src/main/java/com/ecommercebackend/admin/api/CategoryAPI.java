@@ -41,9 +41,8 @@ public class CategoryAPI {
     }
 
     @PostMapping(value = "/save")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> save(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return CompletableFuture.completedFuture(execute("save", userId, lang, param));
+    public ResponseData<ModelMap> save(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return execute("save", userId, lang, param);
     }
 
     @PostMapping(value = "/update")

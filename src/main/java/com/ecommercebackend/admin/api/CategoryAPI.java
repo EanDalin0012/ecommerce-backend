@@ -46,15 +46,13 @@ public class CategoryAPI {
     }
 
     @PostMapping(value = "/update")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> update(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
-        return CompletableFuture.completedFuture(execute("update", userId, lang, param));
+    public ResponseData<ModelMap> update(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
+        return execute("update", userId, lang, param);
     }
 
     @PostMapping(value = "/delete")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> delete(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
-        return CompletableFuture.completedFuture(updateStatusToDelete(userId, lang, param.getMultiModelMap("body")));
+    public ResponseData<ModelMap> delete(@RequestParam("userId") int userId, @RequestParam("lang") String lang, @RequestBody ModelMap param) throws Exception {
+        return updateStatusToDelete(userId, lang, param.getMultiModelMap("body"));
     }
 
     private ResponseData<MultiModelMap> getCategories(String lang) {

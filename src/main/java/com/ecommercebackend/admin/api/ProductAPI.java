@@ -34,38 +34,33 @@ public class ProductAPI {
     private PlatformTransactionManager transactionManager;
 
     @GetMapping(value = "/list")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<MultiModelMap>> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
-        return CompletableFuture.completedFuture(getProductList(lang));
+    public ResponseData<MultiModelMap> list(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+        return getProductList(lang);
     }
 
     @PostMapping(value = "/save")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> save(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return CompletableFuture.completedFuture(execute("save", user_id, lang, param));
+    public ResponseData<ModelMap> save(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return execute("save", user_id, lang, param);
     }
 
     @PostMapping(value = "/update")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> update(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return CompletableFuture.completedFuture(execute("update", user_id, lang, param));
+    public ResponseData<ModelMap> update(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return execute("update", user_id, lang, param);
     }
 
     @PostMapping(value = "/delete")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> delete(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return CompletableFuture.completedFuture(updateStatusToDelete(user_id, lang, param.getMultiModelMap("body")));
+    public ResponseData<ModelMap> delete(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return updateStatusToDelete(user_id, lang, param.getMultiModelMap("body"));
     }
 
     @PostMapping(value = "/switch_web")
-    public CompletableFuture<ResponseData<ModelMap>> updateShowOnWeb(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return CompletableFuture.completedFuture(swichOn("web", param, user_id, lang));
+    public ResponseData<ModelMap> updateShowOnWeb(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return swichOn("web", param, user_id, lang);
     }
 
     @PostMapping(value = "/switch_mobile")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> updateShowOnMobile(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
-        return CompletableFuture.completedFuture(swichOn("mobile", param, user_id, lang));
+    public ResponseData<ModelMap> updateShowOnMobile(@RequestParam("userId") int user_id, @RequestParam("lang") String lang, @RequestBody ModelMap param) {
+        return swichOn("mobile", param, user_id, lang);
     }
 
     private ResponseData<ModelMap> execute(String function, int user_id, String lang, ModelMap param) {
@@ -121,7 +116,6 @@ public class ProductAPI {
             return responseData;
         } catch (Exception e) {
             log.error("get error api product save exception", e);
-            e.printStackTrace();
             message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;
@@ -176,6 +170,7 @@ public class ProductAPI {
     private ResponseData<MultiModelMap> getProductList(String lang) {
         ResponseData<MultiModelMap> responseData = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
         try {
             log.info("====== Start Product get list ====");
 

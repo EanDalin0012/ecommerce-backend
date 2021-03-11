@@ -23,25 +23,31 @@ public class CategoryServiceImplement implements CategoryService {
 
     @Override
     @Transactional(readOnly = true)
-    @PreAuthorize("hasAuthority('COMPANY_READ')")
+    @PreAuthorize("hasAuthority('CATEGORY_READ')")
     public MultiModelMap retrieveList(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "status");
         return categoryDao.retrieveList(param);
     }
 
     @Override
+    @Transactional
+    @PreAuthorize("hasAuthority('CATEGORY_CREATE')")
     public int save(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "name", "status", "userId");
         return categoryDao.save(param);
     }
 
     @Override
+    @Transactional
+    @PreAuthorize("hasAuthority('CATEGORY_DELETE')")
     public int delete(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "id", "status", "userId");
         return categoryDao.delete(param);
     }
 
     @Override
+    @Transactional
+    @PreAuthorize("hasAuthority('CATEGORY_UPDATE')")
     public int update(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "id", "status", "name", "userId");
         return categoryDao.update(param);

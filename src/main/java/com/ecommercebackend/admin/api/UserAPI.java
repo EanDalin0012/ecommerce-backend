@@ -51,15 +51,19 @@ public class UserAPI {
         return  CompletableFuture.completedFuture(this.userList(lang));
     }
 
+    @PostMapping(value = "/info")
+    public ResponseData<ModelMap> addUserInfo(@RequestBody ModelMap param, @RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+        return info(param, "save", lang, user_id);
+    }
+
     @PostMapping(value = "/save")
     public ResponseData<ModelMap> save(@RequestBody ModelMap param, @RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
         return execute(param, "save", lang, user_id);
     }
 
     @GetMapping(value = "/oauth/revoke-token")
-    @Async("asyncExecutor")
-    public CompletableFuture<ResponseData<ModelMap>> oauthRevokeToken(HttpServletRequest request) {
-        return CompletableFuture.completedFuture(this.revokeToken(request));
+    public ResponseData<ModelMap> oauthRevokeToken(HttpServletRequest request) {
+        return this.revokeToken(request);
     }
 
     @GetMapping(value = "/load_user")
@@ -221,6 +225,124 @@ public class UserAPI {
             }
             if (function == "update") {
                 input.setLong("id", body.getLong("id"));
+                input.setString("status", Status.Modify.getValueStr());
+
+                log.info("========== values:" + objectMapper.writeValueAsString(input));
+
+                int update = userService.update(input);
+                if (update > 0) {
+                    Yn = StatusYN.Y;
+                }
+            }
+
+            responseBody.setString(StatusYN.STATUS, Yn);
+            response.setBody(responseBody);
+            transactionManager.commit(transactionStatus);
+
+            log.info("========== Response Values:" + objectMapper.writeValueAsString(response));
+            log.info("========== End User " + function + "=============");
+
+            return response;
+        } catch (ValidatorException ex) {
+            log.error("========== get error:", ex);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
+            response.setError(message);
+            return response;
+        } catch (Exception e) {
+            log.error("======== get error exception", e);
+            transactionManager.rollback(transactionStatus);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
+            response.setError(message);
+            return response;
+        }
+    }
+
+    private ResponseData<ModelMap> info(ModelMap param, String function, String lang, int userId) {
+        ResponseData<ModelMap> response = new ResponseData<>();
+        TransactionStatus transactionStatus = transactionManager.getTransaction(new DefaultTransactionDefinition());
+        ErrorMessage message = new ErrorMessage();
+        try {
+            log.info("======== Start User " + function + "=============");
+
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            ModelMap responseBody = new ModelMap();
+            String Yn = StatusYN.N;
+
+            ModelMap personalInfo               = param.getModelMap("personalInfo");
+            MultiModelMap educationInformations = param.getMultiModelMap("educationInformations");
+            MultiModelMap familyInformations    = param.getMultiModelMap("familyInformations");
+            MultiModelMap emergencyContacts     = param.getMultiModelMap("emergencyContacts");
+
+            /* save personal info*/
+            ModelMap personalInfoInput = new ModelMap();
+            int personalInfoId         = 0;
+            personalInfoInput.setInt("id", personalInfoId);
+            personalInfoInput.setInt("userId", userId);
+            personalInfoInput.setString("firstName", personalInfo.getString("firstName"));
+            personalInfoInput.setString("lastName", personalInfo.getString("lastName"));
+            personalInfoInput.setString("phone", personalInfo.getString("phone"));
+            personalInfoInput.setString("email", personalInfo.getString("email"));
+            personalInfoInput.setString("birthday", personalInfo.getString("birthday"));
+            personalInfoInput.setString("gender", personalInfo.getString("gender"));
+            personalInfoInput.setString("address", personalInfo.getString("address"));
+            personalInfoInput.setString("reportsTo", personalInfo.getString("reportsTo"));
+            personalInfoInput.setString("nationalID", personalInfo.getString("nationalID"));
+            personalInfoInput.setString("nationality", personalInfo.getString("nationality"));
+            personalInfoInput.setString("maritalStatus", personalInfo.getString("maritalStatus"));
+            personalInfoInput.setString("resourceImageID", personalInfo.getString("resourceImageID"));
+            personalInfoInput.setString("description", personalInfo.getString("description"));
+            /* end save personal info*/
+
+            /* save education information*/
+            for (ModelMap educationInfo: educationInformations.toListData()) {
+                int educationInfoID = 0;
+                ModelMap educationInfoInput = new ModelMap();
+                educationInfoInput.setInt("id", educationInfoID);
+                educationInfoInput.setString("institution", educationInfo.getString("institution"));
+                educationInfoInput.setString("subject", educationInfo.getString("subject"));
+                educationInfoInput.setString("startingDate", educationInfo.getString("startingDate"));
+                educationInfoInput.setString("completeDate", educationInfo.getString("completeDate"));
+                educationInfoInput.setString("completeDate", educationInfo.getString("completeDate"));
+                educationInfoInput.setString("degree", educationInfo.getString("degree"));
+                educationInfoInput.setString("grade", educationInfo.getString("grade"));
+            }
+            /* end end save education information*/
+
+            /* save family information*/
+            for (ModelMap familyInfo: familyInformations.toListData()) {
+                int familyInfoID = 0;
+                ModelMap educationInfoInput = new ModelMap();
+                educationInfoInput.setInt("id", familyInfoID);
+                educationInfoInput.setString("name", familyInfo.getString("name"));
+                educationInfoInput.setString("relationship", familyInfo.getString("relationship"));
+                educationInfoInput.setString("phone", familyInfo.getString("phone"));
+                educationInfoInput.setString("phone", familyInfo.getString("phone"));
+            }
+            /* end save education information*/
+
+            /* save family information*/
+            for (ModelMap emergencyInfo: emergencyContacts.toListData()) {
+                int emergencyInfoID = 0;
+                ModelMap educationInfoInput = new ModelMap();
+                educationInfoInput.setInt("id", emergencyInfoID);
+                educationInfoInput.setString("name", emergencyInfo.getString("name"));
+                educationInfoInput.setString("relationship", emergencyInfo.getString("relationship"));
+                educationInfoInput.setString("phone", emergencyInfo.getString("phone"));
+                educationInfoInput.setString("relationship", emergencyInfo.getString("relationship"));
+            }
+            /* end save education information*/
+            ModelMap input = new ModelMap();
+            if (function == "save") {
+                input.setString(StatusYN.STATUS, Status.Active.getValueStr());
+                log.info("========== values:" + objectMapper.writeValueAsString(input));
+                int save = userService.save(input);
+                if (save > 0) {
+                    Yn = StatusYN.Y;
+                }
+            }
+            if (function == "update") {
+                input.setLong("id", param.getLong("id"));
                 input.setString("status", Status.Modify.getValueStr());
 
                 log.info("========== values:" + objectMapper.writeValueAsString(input));

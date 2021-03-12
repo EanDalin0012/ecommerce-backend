@@ -15,6 +15,7 @@ CREATE SEQUENCE family_information_sequence START 1;
 CREATE SEQUENCE personal_information_sequence START 1;
 CREATE SEQUENCE emergency_contact_sequence START 1;
 CREATE SEQUENCE personal_information_details_sequence START 1;
+CREATE SEQUENCE education_info_sequence START 1;
 
 SELECT nextval('serial');
 

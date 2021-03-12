@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ecommercebackend.admin.dao.EmergencyContactDao">
+
+    <select id="retrieveList" resultType="ModelMap">
+        <![CDATA[
+			SELECT
+				id
+				, name			        as "firstName"
+				, relationship			as "lastName"
+			    , phone                 as "phone"
+                , phone2				as "email"
+				, create_date			as "createDate"
+				, (SELECT u.user_name FROM user_ u WHERE u.id = c.create_by) as "createBy"
+				, modify_date			as "modifyDate"
+                , (SELECT u.user_name FROM user_ u WHERE u.id = c.modify_by) as "modifyBy"
+			FROM emergency_contact
+			WHERE status = #{status};
+	     ]]>
+    </select>
+
+    <insert id="save">
+        <![CDATA[
+	    	INSERT INTO emergency_contact
+			(
+			    id
+			    , name
+			    , relationship
+			    , phone
+			    , phone2
+			    , create_by
+			    , create_date
+			    , status
+			)
+			VALUES (
+			#{id}
+			, #{name}
+			, #{relationship}
+			, #{phone}
+			, #{phone2}
+            , #{userId}
+			, to_char(NOW(), 'YYYYMMDD')
+			, #{status}
+			)
+    	]]>
+    </insert>
+
+    <update id="update">
+        <![CDATA[
+				UPDATE emergency_contact
+				SET
+                    name		        = #{name}
+					, relationship		= #{relationship}
+					, phone	            = #{phone}
+                    , phone2	        = #{phone2}
+                    , modify_date	    = to_char(NOW(), 'YYYYMMDD')
+                    , modify_by		    = #{userId}
+				WHERE id			    = #{id}
+		]]>
+    </update>
+
+    <select id="sequence" resultType="java.lang.Integer">
+        <![CDATA[
+        SELECT nextval('emergency_contact_sequence');
+        ]]>
+    </select>
+
+</mapper>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ecommercebackend.admin.dao.PersonalInfoDao">
+
+    <select id="retrieveList" resultType="ModelMap">
+        <![CDATA[
+			SELECT
+				id
+				, first_name			as "firstName"
+				, last_name				as "lastName"
+			    , phone                 as "phone"
+                , email					as "email"
+				, birthday			    as "dateBirth"
+                , gender				as "gender"
+				, address				as "address"
+				, reports_to			as "reportsTo"
+				, national_id		    as "nationalId"
+			    , nationality           as "nationality"
+			    , religion              as "religion"
+			    , marital_status        as "maritalStatus"
+			    , description           as "description"
+			    , resource_image_id     as "resourceImageId"
+				, status				as "status"
+				, create_date			as "createDate"
+				, (SELECT u.user_name FROM user_ u WHERE u.id = c.create_by) as "createBy"
+				, modify_date			as "modifyDate"
+                , (SELECT u.user_name FROM user_ u WHERE u.id = c.modify_by) as "modifyBy"
+			FROM personal_information
+			WHERE status = #{status};
+	     ]]>
+    </select>
+
+    <insert id="save">
+        <![CDATA[
+	    	INSERT INTO personal_information
+			(
+			    id
+			    , first_name
+			    , last_name
+			    , phone
+			    , email
+			    , gender
+			    , address
+			    , reports_to
+			    , national_id
+			    , nationality
+			    , religion
+			    , marital_status
+			    , description
+			    , resource_image_id
+			    , create_by
+			    , create_date
+			    , status
+			)
+			VALUES (
+			#{id}
+			, #{firstName}
+			, #{lastName}
+			, #{phone}
+			, #{email}
+			, #{gender}
+			, COALESCE(#{address}, '' )
+			, COALESCE(#{reportsTo}, '' )
+            , #{nationality}
+            , #{nationality}
+            , #{religion}
+			, #{maritalStatus}
+            , COALESCE(#{description}, '' )
+            , #{resourceImageId}
+            , #{userId}
+			, to_char(NOW(), 'YYYYMMDD')
+			, #{status}
+			)
+    	]]>
+    </insert>
+
+    <update id="update">
+        <![CDATA[
+				UPDATE personal_information
+				SET
+					first_name		    = #{firstName}
+					, last_name		    = #{lastName}
+					, phone	            = #{phone}
+                    , email	            = #{email}
+                    , gender	        = #{gender}
+                    , address	        = COALESCE(#{address}, '' )
+                    , reports_to	    = COALESCE(#{reportsTo}, '' )
+                    , national_id	    = #{nationalId}
+                    , nationality	    = #{nationality}
+                    , religion	        = #{religion}
+                    , marital_status    = #{maritalStatus}
+                    , description       = COALESCE(#{description}, '' )
+                    , resource_image_id = #{resourceImageId}
+                    , modify_date	    = to_char(NOW(), 'YYYYMMDD')
+                    , modify_by		    = #{userId}
+				WHERE id			    = #{id}
+		]]>
+    </update>
+
+    <select id="sequence" resultType="java.lang.Integer">
+        <![CDATA[
+        SELECT nextval('personal_information_sequence');
+        ]]>
+    </select>
+
+</mapper>

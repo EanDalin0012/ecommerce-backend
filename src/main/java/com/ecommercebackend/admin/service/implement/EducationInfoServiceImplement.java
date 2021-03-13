@@ -18,7 +18,7 @@ public class EducationInfoServiceImplement implements EducationInfoService {
 
     @Override
     @Transactional(readOnly = true)
-    @PreAuthorize("hasAuthority('EDUCATION_INFO_READ')")
+    @PreAuthorize("hasAuthority('USER_INFO_READ')")
     public MultiModelMap retrieveList(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "status");
         return educationInfoDao.retrieveList(param);
@@ -26,7 +26,7 @@ public class EducationInfoServiceImplement implements EducationInfoService {
 
     @Override
     @Transactional
-    @PreAuthorize("hasAuthority('EDUCATION_INFO_CREATE')")
+    @PreAuthorize("hasAuthority('USER_INFO_CREATE')")
     public int save(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "id", "userId", "status", "institution", "subject","startingDate","completeDate","degree");
         return educationInfoDao.save(param);
@@ -34,7 +34,7 @@ public class EducationInfoServiceImplement implements EducationInfoService {
 
     @Override
     @Transactional
-    @PreAuthorize("hasAuthority('EDUCATION_INFO_DELETE')")
+    @PreAuthorize("hasAuthority('USER_INFO_DELETE')")
     public int delete(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "id", "userId", "status");
         return educationInfoDao.delete(param);
@@ -42,7 +42,7 @@ public class EducationInfoServiceImplement implements EducationInfoService {
 
     @Override
     @Transactional
-    @PreAuthorize("hasAuthority('EDUCATION_INFO_UPDATE')")
+    @PreAuthorize("hasAuthority('USER_INFO_UPDATE')")
     public int update(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "id", "userId", "status", "institution", "subject","startingDate","completeDate","degree");
         return educationInfoDao.update(param);

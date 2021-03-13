@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ecommercebackend.admin.dao.PersonalInfoDetailDao">
+
+    <insert id="save">
+        <![CDATA[
+	    	INSERT INTO personal_information_details
+			(
+                family_information_id
+			    , personal_information_id
+			    , emergency_contact_id
+                , education_information_id
+			)
+			VALUES (
+			#{id}
+			, #{familyInformationId}
+			, #{personalInformationId}
+			, #{emergencyContactId}
+			, #{educationInformationId}
+			)
+    	]]>
+    </insert>
+
+    <update id="update">
+        <![CDATA[
+				UPDATE personal_information_details
+				SET
+                    family_information_id		= #{familyInformationId}
+					, emergency_contact_id	    = #{emergencyContactId}
+				WHERE personal_information_id			    = #{personalInformationId}
+		]]>
+    </update>
+
+    <delete id="delete">
+        DELETE FROM personal_information_details
+        WHERE personal_information_id   = #{personalInformationId}
+    </delete>
+
+</mapper>

@@ -18,7 +18,7 @@ public class PersonalInfoServiceImplement implements PersonalInfoService {
 
     @Override
     @Transactional(readOnly = true)
-    @PreAuthorize("hasAuthority('PERSONAL_INFO_READ')")
+    @PreAuthorize("hasAuthority('USER_INFO_READ')")
     public MultiModelMap retrieveList(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "status");
         return personalInfoDao.retrieveList(param);
@@ -26,22 +26,22 @@ public class PersonalInfoServiceImplement implements PersonalInfoService {
 
     @Override
     @Transactional
-    @PreAuthorize("hasAuthority('PERSONAL_INFO_CREATE')")
+    @PreAuthorize("hasAuthority('USER_INFO_CREATE')")
     public int save(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "userId", "status", "firstName", "lastName","phone","birthday","gender","nationalID","nationality","maritalStatus");
+        ValidatorUtil.validate(param, "id", "userId", "status", "firstName", "lastName","phone","birthDay","gender","nationalID","nationality","maritalStatus");
         return personalInfoDao.save(param);
     }
 
     @Override
     @Transactional
-    @PreAuthorize("hasAuthority('PERSONAL_INFO_DELETE')")
+    @PreAuthorize("hasAuthority('USER_INFO_DELETE')")
     public int delete(ModelMap param) {
         return personalInfoDao.delete(param);
     }
 
     @Override
     @Transactional
-    @PreAuthorize("hasAuthority('PERSONAL_INFO_UPDATE')")
+    @PreAuthorize("hasAuthority('USER_INFO_UPDATE')")
     public int update(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "id", "userId", "status", "firstName", "lastName","phone","birthday","gender","nationalID","nationality","maritalStatus");
         return personalInfoDao.update(param);

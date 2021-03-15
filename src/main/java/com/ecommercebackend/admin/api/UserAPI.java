@@ -400,36 +400,52 @@ public class UserAPI {
 
                 }
             }
-            /* end save education information*/
-            int educationSize = educationIdArr.length;
-//            if (educationSize > 0) {
-            ModelMap personalDetailInput = new ModelMap();
-            personalDetailInput.setInt("personalInformationId", personalInfoInput.getInt("id"));
-                for (int i = 0; i < educationSize; i++) {
-                    int emergencyContactSize = emergencyContactIdArr.length;
-                    int familyInfoSize       = familyInfoIdArr.length;
-//                    if (emergencyContactSize > familyInfoSize && emergencyContactSize > 0) {
-                        for (int j = 0; j < emergencyContactSize; j++) {
-                            personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[j]);
-                            log.info("emergencyContactId"+ emergencyContactIdArr[j]);
+            if (function == "save") {
+                /* end save education information*/
+                int educationSize = educationIdArr.length;
+                int familyInfoSize = familyInfoIdArr.length;
+                int emergencyContactSize = emergencyContactIdArr.length;
+                ModelMap personalDetailInput = new ModelMap();
+                personalDetailInput.setInt("personalInformationId", personalInfoInput.getInt("id"));
+                if (educationSize >= familyInfoSize && educationSize >= emergencyContactSize) {
+                    for (int i = 0; i < educationSize; i++) {
+                        personalDetailInput.setInt("educationId", educationIdArr[i]);
+                        if (i <= familyInfoSize) {
+                            personalDetailInput.setInt("familyInfoId", familyInfoIdArr[i]);
                         }
-//                    }
-
-                    for (int k = 0; k  < familyInfoIdArr.length; k++) {
-                        personalDetailInput.setInt("familyInformationId", familyInfoIdArr[k]);
-                        log.info("familyInformationId"+ familyInfoIdArr[k]);
+                        if (i <= emergencyContactSize) {
+                            personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[i]);
+                        }
                     }
-
-                    personalDetailInput.setInt("educationInformationId", educationIdArr[i]);
+                } else if (familyInfoSize >= educationSize && familyInfoSize >= emergencyContactSize) {
+                    for (int i = 0; i < familyInfoSize; i++) {
+                        personalDetailInput.setInt("familyInfoId", familyInfoIdArr[i]);
+                        if (i <= educationSize) {
+                            personalDetailInput.setInt("educationId", educationIdArr[i]);
+                        }
+                        if (i <= educationSize) {
+                            personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[i]);
+                        }
+                    }
+                } else if (emergencyContactSize >= educationSize && emergencyContactSize >= familyInfoSize) {
+                    for (int i = 0; i < emergencyContactSize; i++) {
+                        personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[i]);
+                        if (i <= educationSize) {
+                            personalDetailInput.setInt("educationId", educationIdArr[i]);
+                        }
+                        if (i <= familyInfoSize) {
+                            personalDetailInput.setInt("familyInfoId", familyInfoIdArr[i]);
+                        }
+                    }
                 }
-//            }
+
+            }
             /*save personal details*/
 
             /*end save personal details*/
-            responseBody.setString(StatusYN.STATUS, Yn);
+            responseBody.setString(StatusYN.STATUS, StatusYN.Y);
             response.setBody(responseBody);
-//            transactionManager.commit(transactionStatus);
-            transactionManager.rollback(transactionStatus);
+            transactionManager.commit(transactionStatus);
             log.info("========== Response Values:" + objectMapper.writeValueAsString(response));
             log.info("========== End User " + function + "=============");
 

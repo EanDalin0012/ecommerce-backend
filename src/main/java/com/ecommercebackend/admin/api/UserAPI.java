@@ -523,7 +523,7 @@ public class UserAPI {
         } catch (Exception  e) {
             e.printStackTrace();
             log.error("============ error Exception api category get list", e);
-            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang, e.getMessage()));
             response.setError(message);
             return response;
         }

@@ -36,7 +36,7 @@
 
     <select id="getUserByName" resultMap="user">
         <![CDATA[
-			select
+			SELECT
 				u.id
 				, u.user_name
 				, u."password"
@@ -44,12 +44,12 @@
 				, u.account_locked
 				, u.credentials_expired
 				, u.enabled
-				, a."name"		as "authority_name"
-				, a.id 			as "authority_id"
-			from user_ u
-			inner join users_authorities ua on ua.user_id = u.id
-			inner join authority a on a.id = ua.authority_id
-			where u.user_name = #{user_name}
+				, a."name"		AS "authority_name"
+				, a.id 			AS "authority_id"
+			FROM user_ u
+            LEFT JOIN users_authorities ua ON ua.user_id = u.id
+            LEFT JOIN authority a ON a.id = ua.authority_id
+			WHERE u.user_name = #{user_name}
 	   ]]>
     </select>
 

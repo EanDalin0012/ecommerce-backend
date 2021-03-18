@@ -14,15 +14,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping(value = "/api/category/v1")
@@ -58,6 +53,7 @@ public class CategoryAPI {
     private ResponseData<MultiModelMap> getCategories(String lang) {
         ResponseData<MultiModelMap> response = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
         try {
             log.info("===== Start retrieve list of category=====");
             ModelMap input = new ModelMap();
@@ -78,7 +74,7 @@ public class CategoryAPI {
             e.printStackTrace();
             log.info("getMessage:"+e.getMessage());
             log.error("============ error Exception api category get list", e);
-            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang, e.getMessage()));
             response.setError(message);
             return response;
         }

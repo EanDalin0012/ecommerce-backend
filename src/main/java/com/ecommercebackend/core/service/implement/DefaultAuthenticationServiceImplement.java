@@ -53,11 +53,13 @@ public class DefaultAuthenticationServiceImplement implements UserDetailsService
 
             Collection<Authority> authorities = new ArrayList<>(); //userInfo.getModelMap("authorities");
 
-            for (ModelMap data: authList.toListData()) {
-                Authority authority = new Authority();
-                authority.setId(data.getInt("id"));
-                authority.setName(data.getString("name"));
-                authorities.add(authority);
+            if(authList.size() > 0) {
+                for (ModelMap data: authList.toListData()) {
+                    Authority authority = new Authority();
+                    authority.setId(data.getInt("id"));
+                    authority.setName(data.getString("name"));
+                    authorities.add(authority);
+                }
             }
 
             if (userInfo != null) {

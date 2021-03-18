@@ -76,6 +76,7 @@ public class CategoryAPI {
             return response;
         } catch (Exception e) {
             e.printStackTrace();
+            log.info("getMessage:"+e.getMessage());
             log.error("============ error Exception api category get list", e);
             message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             response.setError(message);
@@ -86,18 +87,18 @@ public class CategoryAPI {
     private ResponseData<ModelMap> execute(String function, int user_id, String lang, ModelMap param) {
         ResponseData<ModelMap> responseData = new ResponseData<>();
         ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
         try {
             log.info("===== Start save category =====");
 
             ObjectMapper mapper = new ObjectMapper();
-            ModelMap body = param.getModelMap("body");
             ModelMap responseBody = new ModelMap();
 
             ModelMap input = new ModelMap();
 
-            input.setInt("user_id", user_id);
-            input.setString("name", body.getString("name"));
-            input.setString("description", body.getString("description"));
+            input.setInt("userId", user_id);
+            input.setString("name", param.getString("name"));
+            input.setString("description", param.getString("description"));
             input.setString("status", Status.Active.getValueStr());
 
             log.info("===== value : " + mapper.writeValueAsString(input));
@@ -120,8 +121,14 @@ public class CategoryAPI {
 
             log.info("======== Response Data:" + mapper.writeValueAsString(responseData));
             log.info("======== End save category ====");
+        }  catch (ValidatorException ev) {
+            ev.printStackTrace();
+            log.error("error Application Exception api save category", ev);
+            message.setMessage(MessageUtil.message("category_" + ev.getKey(), lang));
+            responseData.setError(message);
+            return responseData;
         }
-        catch (Exception | ValidatorException e) {
+        catch (Exception  e) {
             e.printStackTrace();
             log.error("========= error Exception api save category", e);
             message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));

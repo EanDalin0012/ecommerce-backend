@@ -5,6 +5,7 @@
     <entry key="status">Invalid Status.</entry>
     <entry key="user_id">Invalid user id.</entry>
     <entry key="exception_error">Internal Server Error</entry>
+    <entry key="Access_Denied">Access is denied</entry>
 
     <!--category message-->
     <entry key="category_name">The category name is null | empty.</entry>

@@ -24,6 +24,7 @@
 		INNER JOIN category c on c.id = p.category_id
 		LEFT JOIN product_details_references pdf on p.id = pdf.product_id
 		where p.status != #{status}
+           ORDER BY p.id DESC
 	     ]]>
     </select>
 

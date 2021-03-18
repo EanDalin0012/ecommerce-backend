@@ -60,6 +60,6 @@ public class CategoryServiceImplement implements CategoryService {
 
     @Override
     public int sequence() {
-        return 0;
+        return categoryDao.sequence();
     }
 }

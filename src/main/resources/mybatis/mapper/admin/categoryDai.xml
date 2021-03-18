@@ -13,8 +13,9 @@
 			, c.status
 			, (SELECT u.user_name FROM user_ u WHERE u.id = c.create_by) as "create_by"
 		    , (SELECT u.user_name FROM user_ u WHERE u.id = c.modify_by) as "modify_by"
-		FROM category c
-		WHERE status    != #{status}
+         FROM category c
+         WHERE status    != #{status}
+         ORDER BY c.id DESC
 	     ]]>
     </select>
 
@@ -27,8 +28,8 @@
 			, c.create_date
 			, c.modify_date
 			, c.status
-			, (SELECT u.user_name FROM user_ u WHERE u.id = c.create_by) as "create_by"
-		  , (SELECT u.user_name FROM user_ u WHERE u.id = c.modify_by) as "modify_by"
+			, (SELECT u.user_name FROM user_ u WHERE u.id = c.create_by) as "createBy"
+		  , (SELECT u.user_name FROM user_ u WHERE u.id = c.modify_by) as "modifyBy"
 		FROM category c
 		WHERE status    = #{status}
 		AND id          = #{id}
@@ -51,7 +52,7 @@
 			, #{name}
 			, COALESCE(#{description}, '' )
 			, to_char(NOW(), 'YYYYMMDD')
-			, #{user_id}
+			, #{userId}
 			, #{status}
 			)
     	]]>

@@ -189,8 +189,9 @@ public class ProductAPI {
             responseData.setError(message);
             return responseData;
         } catch (Exception e) {
+            log.info("getMessage:"+e.getMessage());
             log.error("get error exception api product:", e);
-            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang, e.getMessage()));
             responseData.setError(message);
             return responseData;
         }
@@ -241,6 +242,7 @@ public class ProductAPI {
             responseData.setError(message);
             return responseData;
         } catch (Exception e) {
+            log.info("getMessage:"+e.getMessage());
             message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
             responseData.setError(message);
             return responseData;

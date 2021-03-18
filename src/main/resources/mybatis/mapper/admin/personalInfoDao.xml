@@ -5,28 +5,30 @@
     <select id="retrieveList" resultType="ModelMap">
         <![CDATA[
 			SELECT
-				id
-				, first_name			as "firstName"
-				, last_name				as "lastName"
-			    , phone                 as "phone"
-                , email					as "email"
-				, birthday			    as "dateBirth"
-                , gender				as "gender"
-				, address				as "address"
-				, reports_to			as "reportsTo"
-				, national_id		    as "nationalId"
-			    , nationality           as "nationality"
-			    , religion              as "religion"
-			    , marital_status        as "maritalStatus"
-			    , description           as "description"
-			    , resource_image_id     as "resourceImageId"
-				, status				as "status"
-				, create_date			as "createDate"
-				, (SELECT u.user_name FROM user_ u WHERE u.id = c.create_by) as "createBy"
-				, modify_date			as "modifyDate"
-                , (SELECT u.user_name FROM user_ u WHERE u.id = c.modify_by) as "modifyBy"
-			FROM personal_information
-			WHERE status = #{status};
+                pf.id
+				, pf.first_name			as "firstName"
+				, pf.last_name			as "lastName"
+			    , pf.phone              as "phone"
+                , pf.email			    as "email"
+				, pf.birth_date			as "birthDay"
+                , pf.gender				as "gender"
+				, pf.address			as "address"
+			    , pf.birth_date         as "birthDate"
+				, pf.reports_to			as "reportsTo"
+				, pf.national_id		as "nationalID"
+			    , pf.nationality        as "nationality"
+			    , pf.religion           as "religion"
+			    , pf.marital_status     as "maritalStatus"
+			    , pf.description        as "description"
+			    , pf.resource_image_id  as "resourceImageID"
+				, pf.status				as "status"
+				, pf.create_date		as "createDate"
+				, (SELECT u.user_name FROM user_ u WHERE u.id = pf.create_by) as "createBy"
+				, pf.modify_date		as "modifyDate"
+                , (SELECT u.user_name FROM user_ u WHERE u.id = pf.modify_by) as "modifyBy"
+			FROM personal_information pf
+			WHERE status != #{status}
+            ORDER BY pf.id DESC
 	     ]]>
     </select>
 
@@ -37,6 +39,7 @@
 			    id
 			    , first_name
 			    , last_name
+			    , birth_date
 			    , phone
 			    , email
 			    , gender
@@ -56,6 +59,7 @@
 			#{id}
 			, #{firstName}
 			, #{lastName}
+			, #{birthDate}
 			, #{phone}
 			, #{email}
 			, #{gender}
@@ -80,6 +84,7 @@
 				SET
 					first_name		    = #{firstName}
 					, last_name		    = #{lastName}
+				    , birth_date        = #{birthDate}
 					, phone	            = #{phone}
                     , email	            = #{email}
                     , gender	        = #{gender}

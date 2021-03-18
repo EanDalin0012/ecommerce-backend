@@ -12,11 +12,10 @@
                 , education_information_id
 			)
 			VALUES (
-			#{id}
-			, #{familyInformationId}
-			, #{personalInformationId}
+			 #{familyInfoId}
+			, #{personalInfoId}
 			, #{emergencyContactId}
-			, #{educationInformationId}
+			, #{educationId}
 			)
     	]]>
     </insert>

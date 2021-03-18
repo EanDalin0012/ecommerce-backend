@@ -28,7 +28,7 @@ public class PersonalInfoServiceImplement implements PersonalInfoService {
     @Transactional
     @PreAuthorize("hasAuthority('USER_INFO_CREATE')")
     public int save(ModelMap param) throws ValidatorException {
-        ValidatorUtil.validate(param, "id", "userId", "status", "firstName", "lastName","phone","birthDay","gender","nationalID","nationality","maritalStatus");
+        ValidatorUtil.validate(param, "id", "userId", "status", "firstName", "lastName","phone","birthDate","gender","nationalID","nationality","maritalStatus", "religion");
         return personalInfoDao.save(param);
     }
 

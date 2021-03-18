@@ -2,6 +2,8 @@ package com.ecommercebackend.admin.service.implement;
 
 import com.ecommercebackend.admin.dao.PersonalInfoDetailDao;
 import com.ecommercebackend.admin.service.PersonalInfoDetailService;
+import com.ecommercebackend.admin.util.ValidatorUtil;
+import com.ecommercebackend.core.exception.ValidatorException;
 import com.ecommercebackend.core.model.map.ModelMap;
 import com.ecommercebackend.core.model.map.MultiModelMap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,8 @@ public class PersonalInfoDetailServiceImplement implements PersonalInfoDetailSer
     @Override
     @Transactional
     @PreAuthorize("hasAuthority('USER_INFO_CREATE')")
-    public int save(ModelMap param) {
+    public int save(ModelMap param) throws ValidatorException {
+        ValidatorUtil.validate(param, "personalInfoId");
         return personalInfoDetailDao.save(param);
     }
 

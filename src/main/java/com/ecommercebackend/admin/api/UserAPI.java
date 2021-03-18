@@ -66,6 +66,11 @@ public class UserAPI {
         return info(param, "save", lang, user_id);
     }
 
+    @GetMapping(value = "/info/detail")
+    public ResponseData<MultiModelMap> addUserDetails(@RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
+        return getUserInfoDetails(lang);
+    }
+
     @PostMapping(value = "/save")
     public ResponseData<ModelMap> save(@RequestBody ModelMap param, @RequestParam("userId") int user_id, @RequestParam("lang") String lang) {
         return execute(param, "save", lang, user_id);
@@ -299,14 +304,15 @@ public class UserAPI {
             personalInfoInput.setString("lastName", personalInfo.getString("lastName"));
             personalInfoInput.setString("phone", personalInfo.getString("phone"));
             personalInfoInput.setString("email", personalInfo.getString("email"));
-            personalInfoInput.setString("birthDay", personalInfo.getString("birthday"));
+            personalInfoInput.setString("birthDate", personalInfo.getString("birthDate"));
             personalInfoInput.setString("gender", personalInfo.getString("gender"));
+            personalInfoInput.setString("religion", personalInfo.getString("religion"));
             personalInfoInput.setString("address", personalInfo.getString("address"));
             personalInfoInput.setString("reportsTo", personalInfo.getString("reportsTo"));
             personalInfoInput.setString("nationalID", personalInfo.getString("nationalID"));
             personalInfoInput.setString("nationality", personalInfo.getString("nationality"));
             personalInfoInput.setString("maritalStatus", personalInfo.getString("maritalStatus"));
-            personalInfoInput.setString("resourceImageID", personalInfo.getString("resourceImageID"));
+            personalInfoInput.setString("resourceImageId", personalInfo.getString("resourceImageID"));
             personalInfoInput.setString("description", personalInfo.getString("description"));
             personalInfoInput.setString("status", Status.Active.getValueStr());
             if (function == "save") {
@@ -322,82 +328,88 @@ public class UserAPI {
 
             /* save education information*/
             int educationInfoIndex = 0;
-            for (ModelMap educationInfo: educationInformations.toListData()) {
+            if (educationInformations.size() > 0) {
+                for (ModelMap educationInfo : educationInformations.toListData()) {
 
-                ModelMap educationInfoInput = new ModelMap();
-                educationInfoInput.setInt("userId", userId);
-                educationInfoInput.setString("institution", educationInfo.getString("institution"));
-                educationInfoInput.setString("subject", educationInfo.getString("subject"));
-                educationInfoInput.setString("startingDate", educationInfo.getString("startingDate"));
-                educationInfoInput.setString("completeDate", educationInfo.getString("completeDate"));
-                educationInfoInput.setString("degree", educationInfo.getString("degree"));
-                educationInfoInput.setString("grade", educationInfo.getString("grade"));
-                educationInfoInput.setString("status", Status.Active.getValueStr());
-                if (function == "save") {
-                    educationInfoID = educationInfoService.sequence();
-                    educationInfoInput.setInt("id", educationInfoID);
-                    int savePer = educationInfoService.save(educationInfoInput);
-                    if (savePer > 0 ) {
-                        educationIdArr[educationInfoIndex] = educationInfoID;
-                        educationInfoIndex++;
+                    ModelMap educationInfoInput = new ModelMap();
+                    educationInfoInput.setInt("userId", userId);
+                    educationInfoInput.setString("institution", educationInfo.getString("institution"));
+                    educationInfoInput.setString("subject", educationInfo.getString("subject"));
+                    educationInfoInput.setString("startingDate", educationInfo.getString("startingDate"));
+                    educationInfoInput.setString("completeDate", educationInfo.getString("completeDate"));
+                    educationInfoInput.setString("degree", educationInfo.getString("degree"));
+                    educationInfoInput.setString("grade", educationInfo.getString("grade"));
+                    educationInfoInput.setString("status", Status.Active.getValueStr());
+                    if (function == "save") {
+                        educationInfoID = educationInfoService.sequence();
+                        educationInfoInput.setInt("id", educationInfoID);
+                        int savePer = educationInfoService.save(educationInfoInput);
+                        if (savePer > 0) {
+                            educationIdArr[educationInfoIndex] = educationInfoID;
+                            educationInfoIndex++;
+                        }
+                    } else if (function == "update") {
+                        educationInfoInput.setInt("id", educationInfo.getInt("id"));
+                        int update = educationInfoService.update(educationInfoInput);
                     }
-                } else if(function == "update") {
-                    educationInfoInput.setInt("id", educationInfo.getInt("id"));
-                    int update = educationInfoService.update(educationInfoInput);
                 }
             }
             /* end end save education information*/
 
             /* save family information*/
             int familyInfoIndex = 0;
-            for (ModelMap familyInfo: familyInformations.toListData()) {
+            if(familyInformations.size() > 0) {
+                for (ModelMap familyInfo: familyInformations.toListData()) {
 
-                ModelMap familyInfoInput = new ModelMap();
-                familyInfoInput.setInt("userId", userId);
-                familyInfoInput.setString("name", familyInfo.getString("name"));
-                familyInfoInput.setString("relationship", familyInfo.getString("relationship"));
-                familyInfoInput.setString("phone", familyInfo.getString("phone"));
-                familyInfoInput.setString("description", familyInfo.getString("description"));
-                familyInfoInput.setString("status", Status.Active.getValueStr());
-                if (function == "save") {
-                    int familyInfoID  = familyInfoService.sequence();
-                    familyInfoInput.setInt("id", familyInfoID);
-                    int saveEduct = familyInfoService.save(familyInfoInput);
-                    if (saveEduct > 0) {
-                        familyInfoIdArr[familyInfoIndex] = familyInfoID;
-                        familyInfoIndex++;
+                    ModelMap familyInfoInput = new ModelMap();
+                    familyInfoInput.setInt("userId", userId);
+                    familyInfoInput.setString("name", familyInfo.getString("name"));
+                    familyInfoInput.setString("relationship", familyInfo.getString("relationship"));
+                    familyInfoInput.setString("phone", familyInfo.getString("phone"));
+                    familyInfoInput.setString("description", familyInfo.getString("description"));
+                    familyInfoInput.setString("status", Status.Active.getValueStr());
+                    if (function == "save") {
+                        int familyInfoID  = familyInfoService.sequence();
+                        familyInfoInput.setInt("id", familyInfoID);
+                        int saveEduct = familyInfoService.save(familyInfoInput);
+                        if (saveEduct > 0) {
+                            familyInfoIdArr[familyInfoIndex] = familyInfoID;
+                            familyInfoIndex++;
+                        }
+                    } else if(function == "update") {
+                        familyInfoInput.setInt("id", familyInfo.getInt("id"));
+                        int update = familyInfoService.update(familyInfoInput);
+
                     }
-                } else if(function == "update") {
-                    familyInfoInput.setInt("id", familyInfo.getInt("id"));
-                    int update = familyInfoService.update(familyInfoInput);
-
                 }
             }
             /* end save education information*/
 
             /* save emergency Contact*/
             int emergencyContactIndex =0;
-            for (ModelMap emergencyInfo: emergencyContacts.toListData()) {
-                ModelMap emergencyContactInput = new ModelMap();
-                emergencyContactInput.setInt("userId", userId);
-                emergencyContactInput.setString("id", emergencyInfo.getString("name"));
-                emergencyContactInput.setString("name", emergencyInfo.getString("name"));
-                emergencyContactInput.setString("relationship", emergencyInfo.getString("relationship"));
-                emergencyContactInput.setString("phone", emergencyInfo.getString("phone"));
-                emergencyContactInput.setString("phone2", emergencyInfo.getString("phone2"));
-                emergencyContactInput.setString("status", Status.Active.getValueStr());
-                if (function == "save") {
-                    int emergencyInfoID = emergencyContactService.sequence();
-                    emergencyContactInput.setInt("id", emergencyInfoID);
-                    int saveEmergencyContact = emergencyContactService.save(emergencyContactInput);
-                    if (saveEmergencyContact > 0) {
-                        emergencyContactIdArr[emergencyContactIndex] = emergencyInfoID;
-                        emergencyContactIndex ++;
-                    }
-                } else if(function == "update") {
-                    emergencyContactInput.setInt("id", emergencyInfo.getInt("id"));
-                    int update = emergencyContactService.update(emergencyContactInput);
+            if (emergencyContacts.size() > 0) {
+                for (ModelMap emergencyInfo : emergencyContacts.toListData()) {
+                    ModelMap emergencyContactInput = new ModelMap();
+                    emergencyContactInput.setInt("userId", userId);
+                    emergencyContactInput.setString("id", emergencyInfo.getString("name"));
+                    emergencyContactInput.setString("name", emergencyInfo.getString("name"));
+                    emergencyContactInput.setString("relationship", emergencyInfo.getString("relationship"));
+                    emergencyContactInput.setString("phone", emergencyInfo.getString("phone"));
+                    emergencyContactInput.setString("phone2", emergencyInfo.getString("phone2"));
+                    emergencyContactInput.setString("status", Status.Active.getValueStr());
+                    if (function == "save") {
+                        int emergencyInfoID = emergencyContactService.sequence();
+                        emergencyContactInput.setInt("id", emergencyInfoID);
+                        int saveEmergencyContact = emergencyContactService.save(emergencyContactInput);
+                        if (saveEmergencyContact > 0) {
+                            emergencyContactIdArr[emergencyContactIndex] = emergencyInfoID;
+                            emergencyContactIndex++;
+                        }
+                    } else if (function == "update") {
+                        emergencyContactInput.setInt("id", emergencyInfo.getInt("id"));
+                        int update = emergencyContactService.update(emergencyContactInput);
 
+                    }
                 }
             }
             if (function == "save") {
@@ -406,36 +418,45 @@ public class UserAPI {
                 int familyInfoSize = familyInfoIdArr.length;
                 int emergencyContactSize = emergencyContactIdArr.length;
                 ModelMap personalDetailInput = new ModelMap();
-                personalDetailInput.setInt("personalInformationId", personalInfoInput.getInt("id"));
-                if (educationSize >= familyInfoSize && educationSize >= emergencyContactSize) {
+                personalDetailInput.setInt("personalInfoId", personalInfoInput.getInt("id"));
+                if (educationSize >= familyInfoSize && educationSize >= emergencyContactSize && educationSize > 0) {
                     for (int i = 0; i < educationSize; i++) {
                         personalDetailInput.setInt("educationId", educationIdArr[i]);
-                        if (i <= familyInfoSize) {
+                        personalDetailInput.setInt("familyInfoId", 0);
+                        personalDetailInput.setInt("emergencyContactId", 0);
+                        if (familyInfoSize <= educationSize && familyInfoSize -1 >= i) {
                             personalDetailInput.setInt("familyInfoId", familyInfoIdArr[i]);
                         }
-                        if (i <= emergencyContactSize) {
+                        if (emergencyContactSize <= educationSize && emergencyContactSize-1 >= i) {
                             personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[i]);
                         }
+                        personalInfoDetailService.save(personalDetailInput);
                     }
-                } else if (familyInfoSize >= educationSize && familyInfoSize >= emergencyContactSize) {
+                } else if (familyInfoSize >= educationSize && familyInfoSize >= emergencyContactSize && familyInfoSize > 0) {
                     for (int i = 0; i < familyInfoSize; i++) {
                         personalDetailInput.setInt("familyInfoId", familyInfoIdArr[i]);
-                        if (i <= educationSize) {
+                        personalDetailInput.setInt("educationId", 0);
+                        personalDetailInput.setInt("emergencyContactId", 0);
+                        if (educationSize <= familyInfoSize && educationSize-1 >= i) {
                             personalDetailInput.setInt("educationId", educationIdArr[i]);
                         }
-                        if (i <= educationSize) {
+                        if (emergencyContactSize <= familyInfoSize && emergencyContactSize -1 >= i) {
                             personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[i]);
                         }
+                        personalInfoDetailService.save(personalDetailInput);
                     }
-                } else if (emergencyContactSize >= educationSize && emergencyContactSize >= familyInfoSize) {
+                } else if (emergencyContactSize >= educationSize && emergencyContactSize >= familyInfoSize && emergencyContactSize > 0) {
                     for (int i = 0; i < emergencyContactSize; i++) {
                         personalDetailInput.setInt("emergencyContactId", emergencyContactIdArr[i]);
-                        if (i <= educationSize) {
+                        personalDetailInput.setInt("educationId", 0);
+                        personalDetailInput.setInt("familyInfoId", 0);
+                        if (educationSize <= emergencyContactSize && educationSize-1 >= i) {
                             personalDetailInput.setInt("educationId", educationIdArr[i]);
                         }
-                        if (i <= familyInfoSize) {
+                        if (familyInfoSize <= emergencyContactSize && familyInfoSize-1 >= i) {
                             personalDetailInput.setInt("familyInfoId", familyInfoIdArr[i]);
                         }
+                        personalInfoDetailService.save(personalDetailInput);
                     }
                 }
 
@@ -483,5 +504,29 @@ public class UserAPI {
         } catch (Exception e) {
             return out;
         }
+    }
+
+    public ResponseData<MultiModelMap> getUserInfoDetails(String lang) {
+        ResponseData<MultiModelMap> response = new ResponseData<>();
+        ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
+        try {
+            ModelMap input = new ModelMap();
+            input.setString("status", Status.Delete.getValueStr());
+            MultiModelMap list = personalInfoService.retrieveList(input);
+            response.setBody(list);
+        } catch (ValidatorException ex ) {
+            log.error("========== get error:", ex);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
+            response.setError(message);
+            return response;
+        } catch (Exception  e) {
+            e.printStackTrace();
+            log.error("============ error Exception api category get list", e);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang));
+            response.setError(message);
+            return response;
+        }
+        return response;
     }
 }

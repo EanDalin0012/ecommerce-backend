@@ -1,7 +1,6 @@
 package com.ecommercebackend.admin.api;
 
 import com.ecommercebackend.admin.constant.StatusYN;
-import com.ecommercebackend.admin.service.EmergencyContactService;
 import com.ecommercebackend.admin.service.implement.*;
 import com.ecommercebackend.admin.util.MessageUtil;
 import com.ecommercebackend.core.constant.ErrorCode;
@@ -163,6 +162,7 @@ public class UserAPI {
         ResponseData responseData = new ResponseData();
         ErrorMessage message = new ErrorMessage();
         ModelMap output = new ModelMap();
+        message.setCode(StatusYN.N);
         try {
             log.info("========== Start revoke toke===========");
 
@@ -186,7 +186,7 @@ public class UserAPI {
             return responseData;
         } catch (Exception e) {
             log.error("======== get error revoke toke exception ", e);
-            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, "en"));
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, "en", e.getMessage()));
             responseData.setError(message);
             return responseData;
         }

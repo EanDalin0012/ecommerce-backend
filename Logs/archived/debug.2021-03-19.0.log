@@ -1,0 +1,595 @@
+2021-03-19 09:08:32 [restartedMain] [INFO] o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Eanda\.gradle\caches\modules-2\files-2.1\javax.xml\jaxb-impl\2.1\8c86d5d4eac7f89cec63432274d712ba82cd201b\jaxb-impl-2.1.jar referenced one or more files that do not exist: file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/jaxb-api.jar,file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/activation.jar,file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/jsr173_1.0_api.jar,file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/jaxb1-impl.jar
+2021-03-19 09:08:32 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-19 09:08:32 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.b.a.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.b.a.MybatisAutoConfiguration - Using auto-configuration base package 'com.ecommercebackend'
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\CategoryDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\EducationInfoDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\EmergencyContactDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\FamilyInfoDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\PersonalInfoDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\PersonalInfoDetailDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\ProductDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\ResourceImageDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\UserDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\core\dao\DefaultAuthenticationDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\core\dao\SuccessLoginDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\web\dao\ReaderImgDao.class]
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'categoryDao' and 'com.ecommercebackend.admin.dao.CategoryDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'categoryDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'educationInfoDao' and 'com.ecommercebackend.admin.dao.EducationInfoDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'educationInfoDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'emergencyContactDao' and 'com.ecommercebackend.admin.dao.EmergencyContactDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'emergencyContactDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'familyInfoDao' and 'com.ecommercebackend.admin.dao.FamilyInfoDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'familyInfoDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'personalInfoDao' and 'com.ecommercebackend.admin.dao.PersonalInfoDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'personalInfoDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'personalInfoDetailDao' and 'com.ecommercebackend.admin.dao.PersonalInfoDetailDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'personalInfoDetailDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'productDao' and 'com.ecommercebackend.admin.dao.ProductDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'resourceImageDao' and 'com.ecommercebackend.admin.dao.ResourceImageDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'resourceImageDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.ecommercebackend.admin.dao.UserDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'defaultAuthenticationDao' and 'com.ecommercebackend.core.dao.DefaultAuthenticationDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'defaultAuthenticationDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'successLoginDao' and 'com.ecommercebackend.core.dao.SuccessLoginDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'successLoginDao'.
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'readerImgDao' and 'com.ecommercebackend.web.dao.ReaderImgDao' mapperInterface
+2021-03-19 09:08:34 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'readerImgDao'.
+2021-03-19 09:08:34 [restartedMain] [INFO] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$94f7ef18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-19 09:08:34 [restartedMain] [INFO] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-19 09:08:34 [restartedMain] [INFO] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@b663c82' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-19 09:08:34 [restartedMain] [INFO] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-19 09:08:35 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-03-19 09:08:35 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-03-19 09:08:35 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-19 09:08:35 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-19 09:08:35 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-19 09:08:35 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3078 ms
+2021-03-19 09:08:35 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/mybatis_config.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\categoryDai.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\educationInfoDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\emergencyContactDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\familyInfDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\personalInfoDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\personalInfoDetailsDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\productDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\resourceImageDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\userDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\core\SuccessLogin.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\core\defaultAuthenticationDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\web\readerImgDao.xml]'
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/api/web/**'] with []
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/api/mobile/**'] with []
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/401.html'] with []
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/404.html'] with []
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/500.html'] with []
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3daf9a5c, org.springframework.security.web.context.SecurityContextPersistenceFilter@50fcf2cf, org.springframework.security.web.header.HeaderWriterFilter@2fcd99f4, org.springframework.security.web.authentication.logout.LogoutFilter@3b0bd3c9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@57b653ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a5cc57a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@691ec0a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2893856e, org.springframework.security.web.session.SessionManagementFilter@195903fe, org.springframework.security.web.access.ExceptionTranslationFilter@3835ad6c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6020d649]
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@313423bd, org.springframework.security.web.context.SecurityContextPersistenceFilter@10581491, org.springframework.security.web.header.HeaderWriterFilter@618ec2b6, org.springframework.security.web.authentication.logout.LogoutFilter@5f26251c, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@4648e985, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d7021c7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2afccfad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7da11b25, org.springframework.security.web.session.SessionManagementFilter@68f9a55f, org.springframework.security.web.access.ExceptionTranslationFilter@1f564a6f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a4e0e7e]
+2021-03-19 09:08:36 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a361c90, org.springframework.security.web.context.SecurityContextPersistenceFilter@6940b721, org.springframework.security.web.header.HeaderWriterFilter@5a7193f5, org.springframework.security.web.csrf.CsrfFilter@61621635, org.springframework.security.web.authentication.logout.LogoutFilter@9dd75d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e9b2e09, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@67f0627, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@93d0f09, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2fad729d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e669f71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8de4173, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6eb18341, org.springframework.security.web.session.SessionManagementFilter@1862d9a6, org.springframework.security.web.access.ExceptionTranslationFilter@db744dc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@529a2255]
+2021-03-19 09:08:37 [restartedMain] [WARN] o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-03-19 09:08:37 [restartedMain] [DEBUG] o.m.s.b.a.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2021-03-19 09:08:37 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-03-19 09:08:37 [restartedMain] [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-19 09:08:37 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-03-19 09:08:37 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-19 09:08:38 [RMI TCP Connection(1)-192.168.43.44] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-03-19 09:08:38 [RMI TCP Connection(1)-192.168.43.44] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-03-19 09:08:39 [RMI TCP Connection(3)-192.168.43.44] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-19 09:08:39 [RMI TCP Connection(3)-192.168.43.44] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-03-19 09:08:39 [RMI TCP Connection(3)-192.168.43.44] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2021-03-19 09:12:13 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:13 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10875ed0] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:13 [http-nio-8080-exec-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1058275372 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:12:13 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10875ed0]
+2021-03-19 09:12:13 [http-nio-8080-exec-2] [INFO] o.s.s.o.p.token.store.JdbcTokenStore - Failed to find access token for token 38e65f6f-058f-4216-aa27-7ed8227a5248
+2021-03-19 09:12:15 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:15 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@182e40e5] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:15 [AsynchThread-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1809680705 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:12:15 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@182e40e5]
+2021-03-19 09:12:15 [SimpleAsyncTaskExecutor-50] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:15 [SimpleAsyncTaskExecutor-50] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22ccf7fc] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:15 [SimpleAsyncTaskExecutor-50] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1679730099 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:12:15 [SimpleAsyncTaskExecutor-50] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22ccf7fc]
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e17424f]
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@2129744169 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e17424f]
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e17424f]
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e17424f]
+2021-03-19 09:12:20 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e17424f]
+2021-03-19 09:12:20 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:20 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:20 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a3f8531] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:20 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:20 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c82bd5a] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:20 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:12:20 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32302a52] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:20 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1129be38] was not registered for synchronization because synchronization is not active
+2021-03-19 09:12:20 [http-nio-8080-exec-8] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1958653570 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:12:20 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@964701358 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:12:20 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1022870116 wrapping org.postgresql.jdbc.PgConnection@38c84122] will not be managed by Spring
+2021-03-19 09:12:20 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@200639613 wrapping org.postgresql.jdbc.PgConnection@216b9895] will not be managed by Spring
+2021-03-19 09:12:20 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a3f8531]
+2021-03-19 09:12:20 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32302a52]
+2021-03-19 09:12:20 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c82bd5a]
+2021-03-19 09:12:20 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1129be38]
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@799b50f8]
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1444001636 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@799b50f8]
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@799b50f8]
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@799b50f8]
+2021-03-19 09:16:38 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@799b50f8]
+2021-03-19 09:16:39 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:16:39 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4963fcc2] was not registered for synchronization because synchronization is not active
+2021-03-19 09:16:39 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:16:39 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:16:39 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7dcac85f] was not registered for synchronization because synchronization is not active
+2021-03-19 09:16:39 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8737214] was not registered for synchronization because synchronization is not active
+2021-03-19 09:16:39 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@359089064 wrapping org.postgresql.jdbc.PgConnection@216b9895] will not be managed by Spring
+2021-03-19 09:16:39 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1318788878 wrapping org.postgresql.jdbc.PgConnection@38c84122] will not be managed by Spring
+2021-03-19 09:16:39 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1643279917 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:16:39 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4963fcc2]
+2021-03-19 09:16:39 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8737214]
+2021-03-19 09:16:39 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7dcac85f]
+2021-03-19 09:16:39 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:16:39 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2db504ad] was not registered for synchronization because synchronization is not active
+2021-03-19 09:16:39 [http-nio-8080-exec-8] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1519321745 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:16:39 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2db504ad]
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12876a38]
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1079894441 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12876a38]
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12876a38]
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12876a38]
+2021-03-19 09:18:23 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12876a38]
+2021-03-19 09:18:24 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:24 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:24 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3216fb15] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:24 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@59afd3e1] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:24 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1338274546 wrapping org.postgresql.jdbc.PgConnection@216b9895] will not be managed by Spring
+2021-03-19 09:18:24 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@465003520 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:18:24 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3216fb15]
+2021-03-19 09:18:24 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@59afd3e1]
+2021-03-19 09:18:24 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:24 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cfd105b] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:24 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@910596535 wrapping org.postgresql.jdbc.PgConnection@38c84122] will not be managed by Spring
+2021-03-19 09:18:24 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cfd105b]
+2021-03-19 09:18:24 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:24 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c17f758] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:24 [http-nio-8080-exec-8] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@428691042 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:18:24 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c17f758]
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e94a8e4]
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1613033629 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e94a8e4]
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e94a8e4]
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e94a8e4]
+2021-03-19 09:18:43 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e94a8e4]
+2021-03-19 09:18:44 [http-nio-8080-exec-4] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:44 [http-nio-8080-exec-4] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44828058] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:44 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:44 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52b23520] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:44 [http-nio-8080-exec-4] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1246066360 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:18:44 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:44 [http-nio-8080-exec-4] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44828058]
+2021-03-19 09:18:44 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e950b66] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:44 [http-nio-8080-exec-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1039355260 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:18:44 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1616050372 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:18:44 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52b23520]
+2021-03-19 09:18:44 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e950b66]
+2021-03-19 09:18:44 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:18:44 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79bd2055] was not registered for synchronization because synchronization is not active
+2021-03-19 09:18:44 [http-nio-8080-exec-6] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1409617056 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:18:44 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79bd2055]
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d2c4a04]
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@898051035 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d2c4a04]
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d2c4a04]
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d2c4a04]
+2021-03-19 09:19:53 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d2c4a04]
+2021-03-19 09:19:54 [http-nio-8080-exec-4] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:19:54 [http-nio-8080-exec-4] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ba8adf4] was not registered for synchronization because synchronization is not active
+2021-03-19 09:19:54 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:19:54 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216ff2ff] was not registered for synchronization because synchronization is not active
+2021-03-19 09:19:54 [http-nio-8080-exec-4] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@985264271 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:19:54 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@277107583 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:19:54 [http-nio-8080-exec-4] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ba8adf4]
+2021-03-19 09:19:54 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216ff2ff]
+2021-03-19 09:19:54 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:19:54 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eab64d7] was not registered for synchronization because synchronization is not active
+2021-03-19 09:19:54 [http-nio-8080-exec-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1804569750 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:19:54 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eab64d7]
+2021-03-19 09:19:54 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:19:54 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5130a92f] was not registered for synchronization because synchronization is not active
+2021-03-19 09:19:54 [http-nio-8080-exec-6] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1133854308 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:19:54 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5130a92f]
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5028e82c]
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@49955508 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5028e82c]
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5028e82c]
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5028e82c]
+2021-03-19 09:20:09 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5028e82c]
+2021-03-19 09:20:10 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:20:10 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c98a192] was not registered for synchronization because synchronization is not active
+2021-03-19 09:20:10 [http-nio-8080-exec-8] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1050784538 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:20:10 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:20:10 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3309e323] was not registered for synchronization because synchronization is not active
+2021-03-19 09:20:10 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c98a192]
+2021-03-19 09:20:10 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1605784658 wrapping org.postgresql.jdbc.PgConnection@216b9895] will not be managed by Spring
+2021-03-19 09:20:10 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:20:10 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1de53710] was not registered for synchronization because synchronization is not active
+2021-03-19 09:20:10 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@185608397 wrapping org.postgresql.jdbc.PgConnection@38c84122] will not be managed by Spring
+2021-03-19 09:20:10 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3309e323]
+2021-03-19 09:20:10 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1de53710]
+2021-03-19 09:20:10 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:20:10 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5de1eeff] was not registered for synchronization because synchronization is not active
+2021-03-19 09:20:10 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@2111178279 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:20:10 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5de1eeff]
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30dc49f8]
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1568625054 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30dc49f8]
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30dc49f8]
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30dc49f8]
+2021-03-19 09:22:49 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30dc49f8]
+2021-03-19 09:22:49 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:49 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d5f3ea1] was not registered for synchronization because synchronization is not active
+2021-03-19 09:22:49 [http-nio-8080-exec-8] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@508724022 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:22:49 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d5f3ea1]
+2021-03-19 09:22:49 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:49 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:49 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e91eba2] was not registered for synchronization because synchronization is not active
+2021-03-19 09:22:49 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f4b9e3c] was not registered for synchronization because synchronization is not active
+2021-03-19 09:22:49 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@668963827 wrapping org.postgresql.jdbc.PgConnection@216b9895] will not be managed by Spring
+2021-03-19 09:22:49 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@430689868 wrapping org.postgresql.jdbc.PgConnection@38c84122] will not be managed by Spring
+2021-03-19 09:22:49 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:49 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:49 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e91eba2]
+2021-03-19 09:22:49 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f4b9e3c]
+2021-03-19 09:22:49 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41400db0] was not registered for synchronization because synchronization is not active
+2021-03-19 09:22:49 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f16adfb] was not registered for synchronization because synchronization is not active
+2021-03-19 09:22:49 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@92165184 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will not be managed by Spring
+2021-03-19 09:22:49 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@518296956 wrapping org.postgresql.jdbc.PgConnection@19eb7632] will not be managed by Spring
+2021-03-19 09:22:49 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f16adfb]
+2021-03-19 09:22:49 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41400db0]
+2021-03-19 09:22:51 [http-nio-8080-exec-2] [WARN] o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [241] milliseconds.
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@368d18e1]
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1797274709 wrapping org.postgresql.jdbc.PgConnection@2a5fcfe4] will be managed by Spring
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@368d18e1]
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@368d18e1]
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@368d18e1]
+2021-03-19 09:22:55 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@368d18e1]
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20e998b0]
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@943459575 wrapping org.postgresql.jdbc.PgConnection@216b9895] will be managed by Spring
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20e998b0]
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20e998b0]
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20e998b0]
+2021-03-19 09:23:01 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20e998b0]
+2021-03-19 09:23:01 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 09:23:01 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60be0dd8] was not registered for synchronization because synchronization is not active
+2021-03-19 09:23:01 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1556803749 wrapping org.postgresql.jdbc.PgConnection@38c84122] will not be managed by Spring
+2021-03-19 09:23:01 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60be0dd8]
+2021-03-19 09:28:39 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:28:39 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:28:41 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:28:43 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:28:47 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:28:55 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:29:11 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:29:43 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:30:47 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:32:55 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:37:11 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 09:47:03 [RMI TCP Accept-0] [WARN] sun.rmi.transport.tcp - RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=55358] throws
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:394)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:366)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67aa9a86]
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@2120352641 wrapping org.postgresql.jdbc.PgConnection@6f1614d4] will be managed by Spring
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67aa9a86]
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67aa9a86]
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67aa9a86]
+2021-03-19 11:30:31 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67aa9a86]
+2021-03-19 11:30:31 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 11:30:31 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b548cde] was not registered for synchronization because synchronization is not active
+2021-03-19 11:30:31 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@919690299 wrapping org.postgresql.jdbc.PgConnection@6f1614d4] will not be managed by Spring
+2021-03-19 11:30:31 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 11:30:31 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 11:30:31 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@573ac406] was not registered for synchronization because synchronization is not active
+2021-03-19 11:30:31 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cc92274] was not registered for synchronization because synchronization is not active
+2021-03-19 11:30:31 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b548cde]
+2021-03-19 11:30:31 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@437262328 wrapping org.postgresql.jdbc.PgConnection@60130834] will not be managed by Spring
+2021-03-19 11:30:31 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@73564384 wrapping org.postgresql.jdbc.PgConnection@450e3051] will not be managed by Spring
+2021-03-19 11:30:31 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@573ac406]
+2021-03-19 11:30:31 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cc92274]
+2021-03-19 11:30:31 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 11:30:31 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c7a93dd] was not registered for synchronization because synchronization is not active
+2021-03-19 11:30:31 [http-nio-8080-exec-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@420519878 wrapping org.postgresql.jdbc.PgConnection@6f1614d4] will not be managed by Spring
+2021-03-19 11:30:31 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c7a93dd]
+2021-03-19 11:30:54 [HikariPool-1 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m43s240ms265µs100ns).
+2021-03-19 13:30:21 [HikariPool-1 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h19m56s205ms833µs200ns).
+2021-03-19 14:43:02 [HikariPool-1 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m40s998ms410µs801ns).
+2021-03-19 18:29:13 [HikariPool-1 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h28m39s333ms647µs700ns).
+2021-03-19 18:29:25 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:25 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b935740] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:25 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@546233135 wrapping org.postgresql.jdbc.PgConnection@1baba2c8] will not be managed by Spring
+2021-03-19 18:29:25 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b935740]
+2021-03-19 18:29:25 [http-nio-8080-exec-5] [INFO] o.s.s.o.p.token.store.JdbcTokenStore - Failed to find access token for token 2e45d2e4-1c07-49b7-804b-0fc7b7c53fd8
+2021-03-19 18:29:25 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:25 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4242777a] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:25 [AsynchThread-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1283817794 wrapping org.postgresql.jdbc.PgConnection@1baba2c8] will not be managed by Spring
+2021-03-19 18:29:25 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4242777a]
+2021-03-19 18:29:25 [SimpleAsyncTaskExecutor-246] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:25 [SimpleAsyncTaskExecutor-246] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d86f874] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:25 [SimpleAsyncTaskExecutor-246] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1396776372 wrapping org.postgresql.jdbc.PgConnection@577e9304] will not be managed by Spring
+2021-03-19 18:29:25 [SimpleAsyncTaskExecutor-246] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d86f874]
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58c77424]
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1802976005 wrapping org.postgresql.jdbc.PgConnection@1baba2c8] will be managed by Spring
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58c77424]
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58c77424]
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58c77424]
+2021-03-19 18:29:28 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58c77424]
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@778d927]
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@873790224 wrapping org.postgresql.jdbc.PgConnection@1baba2c8] will be managed by Spring
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@778d927]
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@778d927]
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@778d927]
+2021-03-19 18:29:30 [http-nio-8080-exec-7] [DEBUG] org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@778d927]
+2021-03-19 18:29:31 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:31 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2d55d44b] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:31 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@316186435 wrapping org.postgresql.jdbc.PgConnection@1baba2c8] will not be managed by Spring
+2021-03-19 18:29:31 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:31 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:31 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1de33096] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:31 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17b89c22] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:31 [http-nio-8080-exec-9] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@211163852 wrapping org.postgresql.jdbc.PgConnection@577e9304] will not be managed by Spring
+2021-03-19 18:29:31 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@666020323 wrapping org.postgresql.jdbc.PgConnection@79c8b4b6] will not be managed by Spring
+2021-03-19 18:29:31 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2d55d44b]
+2021-03-19 18:29:31 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 18:29:31 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ca7d1ba] was not registered for synchronization because synchronization is not active
+2021-03-19 18:29:31 [http-nio-8080-exec-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1609958915 wrapping org.postgresql.jdbc.PgConnection@1baba2c8] will not be managed by Spring
+2021-03-19 18:29:31 [http-nio-8080-exec-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ca7d1ba]
+2021-03-19 18:29:31 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1de33096]
+2021-03-19 18:29:31 [http-nio-8080-exec-9] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17b89c22]
+2021-03-19 22:14:07 [restartedMain] [INFO] o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Eanda\.gradle\caches\modules-2\files-2.1\javax.xml\jaxb-impl\2.1\8c86d5d4eac7f89cec63432274d712ba82cd201b\jaxb-impl-2.1.jar referenced one or more files that do not exist: file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/jaxb-api.jar,file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/activation.jar,file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/jsr173_1.0_api.jar,file:/C:/Users/Eanda/.gradle/caches/modules-2/files-2.1/javax.xml/jaxb-impl/2.1/8c86d5d4eac7f89cec63432274d712ba82cd201b/jaxb1-impl.jar
+2021-03-19 22:14:07 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-19 22:14:07 [restartedMain] [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.b.a.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.b.a.MybatisAutoConfiguration - Using auto-configuration base package 'com.ecommercebackend'
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\CategoryDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\EducationInfoDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\EmergencyContactDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\FamilyInfoDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\PersonalInfoDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\PersonalInfoDetailDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\ProductDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\ResourceImageDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\admin\dao\UserDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\core\dao\DefaultAuthenticationDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\core\dao\SuccessLoginDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [E:\projects\Ecommerce\ecommerce-backend\build\classes\java\main\com\ecommercebackend\web\dao\ReaderImgDao.class]
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'categoryDao' and 'com.ecommercebackend.admin.dao.CategoryDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'categoryDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'educationInfoDao' and 'com.ecommercebackend.admin.dao.EducationInfoDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'educationInfoDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'emergencyContactDao' and 'com.ecommercebackend.admin.dao.EmergencyContactDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'emergencyContactDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'familyInfoDao' and 'com.ecommercebackend.admin.dao.FamilyInfoDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'familyInfoDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'personalInfoDao' and 'com.ecommercebackend.admin.dao.PersonalInfoDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'personalInfoDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'personalInfoDetailDao' and 'com.ecommercebackend.admin.dao.PersonalInfoDetailDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'personalInfoDetailDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'productDao' and 'com.ecommercebackend.admin.dao.ProductDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'productDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'resourceImageDao' and 'com.ecommercebackend.admin.dao.ResourceImageDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'resourceImageDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.ecommercebackend.admin.dao.UserDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'defaultAuthenticationDao' and 'com.ecommercebackend.core.dao.DefaultAuthenticationDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'defaultAuthenticationDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'successLoginDao' and 'com.ecommercebackend.core.dao.SuccessLoginDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'successLoginDao'.
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'readerImgDao' and 'com.ecommercebackend.web.dao.ReaderImgDao' mapperInterface
+2021-03-19 22:14:09 [restartedMain] [DEBUG] o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'readerImgDao'.
+2021-03-19 22:14:09 [restartedMain] [INFO] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$94a4dca4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-19 22:14:09 [restartedMain] [INFO] o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-19 22:14:09 [restartedMain] [INFO] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b48b7ac' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-19 22:14:09 [restartedMain] [INFO] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-19 22:14:09 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-03-19 22:14:09 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-03-19 22:14:09 [restartedMain] [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-03-19 22:14:09 [restartedMain] [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-19 22:14:10 [restartedMain] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-03-19 22:14:10 [restartedMain] [INFO] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2682 ms
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/mybatis_config.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\categoryDai.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\educationInfoDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\emergencyContactDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\familyInfDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\personalInfoDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\personalInfoDetailsDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\productDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\resourceImageDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\admin\userDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\core\SuccessLogin.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\core\defaultAuthenticationDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [DEBUG] o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\projects\Ecommerce\ecommerce-backend\build\resources\main\mybatis\mapper\web\readerImgDao.xml]'
+2021-03-19 22:14:10 [restartedMain] [INFO] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-03-19 22:14:10 [restartedMain] [INFO] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'asyncExecutor'
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/api/web/**'] with []
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/api/mobile/**'] with []
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/401.html'] with []
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/404.html'] with []
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/500.html'] with []
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22a01d22, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ab9027e, org.springframework.security.web.header.HeaderWriterFilter@7ac96477, org.springframework.security.web.authentication.logout.LogoutFilter@385c28ad, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7ca8fa6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28d359cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@623ddfc5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3556888a, org.springframework.security.web.session.SessionManagementFilter@226237d6, org.springframework.security.web.access.ExceptionTranslationFilter@15b512d1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2cf984c9]
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Ant [pattern='/api/**']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b6178b3, org.springframework.security.web.context.SecurityContextPersistenceFilter@95516de, org.springframework.security.web.header.HeaderWriterFilter@23d9f3b2, org.springframework.security.web.authentication.logout.LogoutFilter@6fe80b76, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@16b7546f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@446b4b9f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28c374c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a5470f5, org.springframework.security.web.session.SessionManagementFilter@5306a139, org.springframework.security.web.access.ExceptionTranslationFilter@1899f54, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@121ac264]
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fb03f79, org.springframework.security.web.context.SecurityContextPersistenceFilter@14253ccd, org.springframework.security.web.header.HeaderWriterFilter@2c6fabdc, org.springframework.security.web.csrf.CsrfFilter@1ccc0583, org.springframework.security.web.authentication.logout.LogoutFilter@6fce9885, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@97fb31, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3c096f72, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4c516f9b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a1dc2bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b94a861, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a74cb84, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73a04b53, org.springframework.security.web.session.SessionManagementFilter@68b9dc44, org.springframework.security.web.access.ExceptionTranslationFilter@3cac6840, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17c5fd3]
+2021-03-19 22:14:11 [restartedMain] [WARN] o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2021-03-19 22:14:11 [restartedMain] [DEBUG] o.m.s.b.a.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-03-19 22:14:11 [restartedMain] [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-03-19 22:14:11 [restartedMain] [INFO] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-19 22:14:12 [RMI TCP Connection(1)-192.168.43.44] [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-19 22:14:12 [RMI TCP Connection(1)-192.168.43.44] [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-03-19 22:14:12 [RMI TCP Connection(1)-192.168.43.44] [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-03-19 22:14:12 [RMI TCP Connection(3)-192.168.43.44] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-03-19 22:14:12 [RMI TCP Connection(3)-192.168.43.44] [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-03-19 22:18:14 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:18:14 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3606ba11] was not registered for synchronization because synchronization is not active
+2021-03-19 22:18:14 [http-nio-8080-exec-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1753528565 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:18:15 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3606ba11]
+2021-03-19 22:18:15 [http-nio-8080-exec-1] [INFO] o.s.s.o.p.token.store.JdbcTokenStore - Failed to find access token for token bd29ed94-8c33-44ec-9e41-ae80bd42d10f
+2021-03-19 22:18:15 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:18:15 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45e1a289] was not registered for synchronization because synchronization is not active
+2021-03-19 22:18:15 [AsynchThread-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1230409180 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:18:15 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45e1a289]
+2021-03-19 22:18:15 [SimpleAsyncTaskExecutor-50] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:18:15 [SimpleAsyncTaskExecutor-50] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ef46c6d] was not registered for synchronization because synchronization is not active
+2021-03-19 22:18:15 [SimpleAsyncTaskExecutor-50] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@341319381 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:18:15 [SimpleAsyncTaskExecutor-50] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ef46c6d]
+2021-03-19 22:20:27 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:20:27 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6174c174] was not registered for synchronization because synchronization is not active
+2021-03-19 22:20:27 [http-nio-8080-exec-6] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1042420964 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:20:27 [http-nio-8080-exec-6] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6174c174]
+2021-03-19 22:20:27 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:20:27 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b879e8] was not registered for synchronization because synchronization is not active
+2021-03-19 22:20:27 [AsynchThread-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@780108687 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:20:27 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b879e8]
+2021-03-19 22:20:27 [SimpleAsyncTaskExecutor-75] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:20:27 [SimpleAsyncTaskExecutor-75] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57d3ed27] was not registered for synchronization because synchronization is not active
+2021-03-19 22:20:27 [SimpleAsyncTaskExecutor-75] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1494485421 wrapping org.postgresql.jdbc.PgConnection@5d2b8657] will not be managed by Spring
+2021-03-19 22:20:27 [SimpleAsyncTaskExecutor-75] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57d3ed27]
+2021-03-19 22:21:59 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:21:59 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65ba72bd] was not registered for synchronization because synchronization is not active
+2021-03-19 22:21:59 [http-nio-8080-exec-10] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1636170450 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:21:59 [http-nio-8080-exec-10] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65ba72bd]
+2021-03-19 22:21:59 [AsynchThread-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:21:59 [AsynchThread-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64cbea18] was not registered for synchronization because synchronization is not active
+2021-03-19 22:21:59 [AsynchThread-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1779173617 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:21:59 [AsynchThread-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64cbea18]
+2021-03-19 22:21:59 [SimpleAsyncTaskExecutor-100] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:21:59 [SimpleAsyncTaskExecutor-100] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@bbe5e9c] was not registered for synchronization because synchronization is not active
+2021-03-19 22:21:59 [SimpleAsyncTaskExecutor-100] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@91861403 wrapping org.postgresql.jdbc.PgConnection@5d2b8657] will not be managed by Spring
+2021-03-19 22:21:59 [SimpleAsyncTaskExecutor-100] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@bbe5e9c]
+2021-03-19 22:29:42 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:29:42 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d97a607] was not registered for synchronization because synchronization is not active
+2021-03-19 22:29:42 [http-nio-8080-exec-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1875924743 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:29:42 [http-nio-8080-exec-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d97a607]
+2021-03-19 22:29:42 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:29:42 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e56ba0f] was not registered for synchronization because synchronization is not active
+2021-03-19 22:29:42 [AsynchThread-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1966194203 wrapping org.postgresql.jdbc.PgConnection@7da7c61e] will not be managed by Spring
+2021-03-19 22:29:42 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e56ba0f]
+2021-03-19 22:29:42 [SimpleAsyncTaskExecutor-125] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 22:29:42 [SimpleAsyncTaskExecutor-125] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18e403b4] was not registered for synchronization because synchronization is not active
+2021-03-19 22:29:42 [SimpleAsyncTaskExecutor-125] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@371453656 wrapping org.postgresql.jdbc.PgConnection@5d2b8657] will not be managed by Spring
+2021-03-19 22:29:42 [SimpleAsyncTaskExecutor-125] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18e403b4]
+2021-03-19 22:48:31 [HikariPool-1 housekeeper] [WARN] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m57s754ms204µs100ns).
+2021-03-19 23:02:41 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:02:41 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b52e830] was not registered for synchronization because synchronization is not active
+2021-03-19 23:02:41 [http-nio-8080-exec-8] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@777022270 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:02:41 [http-nio-8080-exec-8] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b52e830]
+2021-03-19 23:02:41 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:02:41 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a401298] was not registered for synchronization because synchronization is not active
+2021-03-19 23:02:41 [AsynchThread-2] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1866631604 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:02:41 [AsynchThread-2] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a401298]
+2021-03-19 23:02:41 [SimpleAsyncTaskExecutor-150] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:02:41 [SimpleAsyncTaskExecutor-150] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2fea2212] was not registered for synchronization because synchronization is not active
+2021-03-19 23:02:41 [SimpleAsyncTaskExecutor-150] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@556652959 wrapping org.postgresql.jdbc.PgConnection@25124962] will not be managed by Spring
+2021-03-19 23:02:41 [SimpleAsyncTaskExecutor-150] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2fea2212]
+2021-03-19 23:02:59 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:02:59 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7669458e] was not registered for synchronization because synchronization is not active
+2021-03-19 23:02:59 [http-nio-8080-exec-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1949896738 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:02:59 [http-nio-8080-exec-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7669458e]
+2021-03-19 23:02:59 [AsynchThread-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:02:59 [AsynchThread-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e338168] was not registered for synchronization because synchronization is not active
+2021-03-19 23:02:59 [AsynchThread-3] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@724632266 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:02:59 [AsynchThread-3] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e338168]
+2021-03-19 23:02:59 [SimpleAsyncTaskExecutor-175] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:02:59 [SimpleAsyncTaskExecutor-175] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45cca20e] was not registered for synchronization because synchronization is not active
+2021-03-19 23:02:59 [SimpleAsyncTaskExecutor-175] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1259033799 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:02:59 [SimpleAsyncTaskExecutor-175] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45cca20e]
+2021-03-19 23:04:02 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:04:02 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39638f5] was not registered for synchronization because synchronization is not active
+2021-03-19 23:04:02 [http-nio-8080-exec-5] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@223463159 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:04:02 [http-nio-8080-exec-5] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39638f5]
+2021-03-19 23:04:02 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:04:02 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43b2a185] was not registered for synchronization because synchronization is not active
+2021-03-19 23:04:02 [AsynchThread-1] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@740956541 wrapping org.postgresql.jdbc.PgConnection@1b555d37] will not be managed by Spring
+2021-03-19 23:04:02 [AsynchThread-1] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43b2a185]
+2021-03-19 23:04:02 [SimpleAsyncTaskExecutor-200] [DEBUG] org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2021-03-19 23:04:02 [SimpleAsyncTaskExecutor-200] [DEBUG] org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@157d9f3a] was not registered for synchronization because synchronization is not active
+2021-03-19 23:04:02 [SimpleAsyncTaskExecutor-200] [DEBUG] o.m.s.t.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@465200101 wrapping org.postgresql.jdbc.PgConnection@25124962] will not be managed by Spring
+2021-03-19 23:04:02 [SimpleAsyncTaskExecutor-200] [DEBUG] org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@157d9f3a]

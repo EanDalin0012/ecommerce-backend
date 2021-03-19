@@ -492,7 +492,7 @@ public class UserAPI {
             ObjectMapper objectMapper = new ObjectMapper();
             log.info("load user "+objectMapper.writeValueAsString(body));
             ModelMap input = new ModelMap();
-            input.setString("user_name", "admin");
+            input.setString("user_name", body.getString("userName"));
             out = userService.loadUserByUserName(input);
             if (out != null) {
                 eventPublisher.publishEvent(new UserAuthenticateEvent(body));

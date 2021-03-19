@@ -91,6 +91,7 @@
 				, u.credentials_expired
 				, u.enabled
 				, u.user_name
+                , u.is_first_login
 			from user_ u
 			where u.user_name = #{user_name}
 	     ]]>

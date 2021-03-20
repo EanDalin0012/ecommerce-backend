@@ -22,6 +22,12 @@ public class UserServiceImplement implements UserService {
     }
 
     @Override
+    public int updatePassword(ModelMap param) throws ValidatorException {
+        ValidatorUtil.validate(param, "status", "user_name", "password");
+        return userDao.updatePassword(param);
+    }
+
+    @Override
     public int save(ModelMap param) throws ValidatorException {
         ValidatorUtil.validate(param, "user_name", "passwd", "is_first_login", "enable", "account_lock", "credential_expired", "account_expired", "status", "user_id");
         return userDao.save(param);

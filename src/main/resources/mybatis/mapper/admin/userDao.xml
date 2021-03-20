@@ -127,6 +127,16 @@
 		]]>
     </update>
 
+    <update id="updatePassword">
+        <![CDATA[
+        UPDATE user_
+        SET
+           password		= #{password}
+            , is_first_login = #{is_first_login}
+        WHERE user_name	= #{user_name}
+        ]]>
+    </update>
+
     <select id="sequence" resultType="java.lang.Integer">
         <![CDATA[
             SELECT nextval('sequence_user_');

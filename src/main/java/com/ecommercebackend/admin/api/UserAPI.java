@@ -5,6 +5,7 @@ import com.ecommercebackend.admin.service.implement.*;
 import com.ecommercebackend.admin.util.MessageUtil;
 import com.ecommercebackend.core.constant.ErrorCode;
 import com.ecommercebackend.core.constant.Status;
+import com.ecommercebackend.core.dao.DefaultAuthenticationDao;
 import com.ecommercebackend.core.dto.ErrorMessage;
 import com.ecommercebackend.core.exception.ValidatorException;
 import com.ecommercebackend.core.model.map.ModelMap;
@@ -17,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -50,7 +52,8 @@ public class UserAPI {
     private UserServiceImplement userService;
     @Autowired
     private PlatformTransactionManager transactionManager;
-
+    @Autowired
+    private DefaultAuthenticationDao defaultAuthenticationProviderDao;
     @Autowired
     private TokenStore tokenStore;
 
@@ -123,6 +126,11 @@ public class UserAPI {
     @Async("asyncExecutor")
     public  CompletableFuture<ModelMap> loadUser(@RequestBody ModelMap body, @RequestParam ("lang") String lang) throws ValidatorException {
         return CompletableFuture.completedFuture(this.loadUserByUserName(body, lang));
+    }
+
+    @PostMapping(value = "/first/login")
+    public ResponseData<ModelMap> firstLogin(@RequestBody ModelMap param, @RequestParam("userId") int userId, @RequestParam("lang") String lang) {
+        return isFirstLogin(param, userId, lang);
     }
 
     private ResponseData<ModelMap> userList(String lang) {
@@ -528,5 +536,41 @@ public class UserAPI {
             return response;
         }
         return response;
+    }
+
+    private ResponseData<ModelMap> isFirstLogin(ModelMap param, int userId, String lang) {
+        ResponseData<ModelMap> response = new ResponseData<>();
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        ErrorMessage message = new ErrorMessage();
+        message.setCode(StatusYN.N);
+        try {
+            ModelMap responseBody = new ModelMap();
+            if (param.getString("newPassword").equals(param.getString("confirmPassword"))) {
+                    String pw = passwordEncoder.encode(param.getString("newPassword"));
+                    ModelMap input = new ModelMap();
+                    input.setString("status", Status.Modify.getValueStr());
+                    input.setString("user_name", param.getString("userName"));
+                    input.setString("password", pw);
+                    input.setBoolean("is_first_login", false);
+                    int update = userService.updatePassword(input);
+                    if (update > 0) {
+                        responseBody.setString("status", StatusYN.Y);
+                        response.setBody(responseBody);
+                    }
+            }
+
+        } catch (ValidatorException ex) {
+            log.error("========== get error:", ex);
+            message.setMessage(MessageUtil.message("user_" + ex.getKey(), lang));
+            response.setError(message);
+            return response;
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("============ error Exception api category get list", e);
+            message.setMessage(MessageUtil.message(ErrorCode.EXCEPTION_ERR, lang, e.getMessage()));
+            response.setError(message);
+            return response;
+        }
+        return  response;
     }
 }
